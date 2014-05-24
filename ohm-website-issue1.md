@@ -1,0 +1,1 @@
+Something to consider with client rendering is the vast array of graphical ability in the clients. Expecting too much of the client will render (dysqidt?) the website unusable. See the intro on (http://www.farbrausch.de/~fg/da/diplom_print.pdf) for details
