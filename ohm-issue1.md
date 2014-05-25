@@ -53,6 +53,17 @@ Mapnik FAQ: http://mapnik.org/faq/
 
 Kothic.js (starting point that Tim Waters led me on): https://github.com/kothic/kothic-js
 
+http://www.ahahah.eu/data/doc/gisscience2012_gaffuri_draft.pdf
+
+
+*************************
+Java tools:
+SVG Web Mapping. Four-dimensional visualization of time- and geobased data
+http://www.geotools.org/
+
+http://www.opencarto.ahahah.eu/
+
+Look into this, too: http://geojson.org/
 
 >>>>>>> 8b9bdd5041776a1691c7442dd8570506d9b497fc
 
