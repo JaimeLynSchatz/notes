@@ -1,0 +1,222 @@
+[Monday, July 28, 2014] [05:28:28 PM] <muninn-project> mapnik_2008.xml on the ohm
+[Monday, July 28, 2014] [05:28:58 PM] <muninn-project> I suspect there's a config parameters to lock in the year config.
+[Monday, July 28, 2014] [05:29:27 PM] <muninn-project> If we can get that it will be a hint of where in the code to find the magic to add to the query.
+[Monday, July 28, 2014] [05:30:21 PM] <muninn-project> eseentialy, we need to make the year = xxx in the WHERE clause, but I'd rather re-use as much of the code as possible.
+[Monday, July 28, 2014] [05:30:41 PM] <muninn-project> Do you mind if we shut it down for tonight and I'll login to the machine tomorrow first thing?
+[Monday, July 28, 2014] [05:31:19 PM] <jlschatz_wikimedia_intern> No problem. :/ Sorry to keep you up with this. 
+[Monday, July 28, 2014] [05:31:32 PM] <muninn-project> It's my job. ;)
+[Monday, July 28, 2014] [05:31:40 PM] <jlschatz_wikimedia_intern> :D  Well, thank you.
+[Monday, July 28, 2014] [05:36:11 PM] <muninn-project> Curses
+[Monday, July 28, 2014] [05:36:49 PM] <jlschatz_wikimedia_intern> uh-oh
+[Monday, July 28, 2014] [05:36:52 PM] <jlschatz_wikimedia_intern> What happened?
+[Monday, July 28, 2014] [05:37:10 PM] <muninn-project> Fire. people running around in circles. the usual :)
+[Monday, July 28, 2014] [05:37:21 PM] <jlschatz_wikimedia_intern> :( duck and cover
+[Monday, July 28, 2014] [05:38:11 PM] <muninn-project> Nah, need air reaid sirens for that.
+[Monday, July 28, 2014] [05:39:40 PM] <jlschatz_wikimedia_intern> :)
+[Monday, July 28, 2014] [10:49:20 PM] |042| jlschatz_wikimedia_intern 7DKAACJOU your unique ID
+[Monday, July 28, 2014] [10:49:21 PM] |Topic| The channel topic is "OpenHistoricalMap - http://OpenHistoricalMap.org mapping the history of the world! ".
+[Monday, July 28, 2014] [10:49:21 PM] |Topic| The topic was set by ChanServ!services@services.oftc.net on 06/18/14 04:25 PM.
+[Monday, July 28, 2014] [10:49:28 PM] |Mode| Channel modes: no messages from outside, topic protection
+[Monday, July 28, 2014] [10:49:28 PM] |Created| This channel was created on 04/25/14 07:05 AM.
+[10:13] *** The channel topic is "OpenHistoricalMap - http://OpenHistoricalMap.org mapping the history of the world! ".
+[10:13] *** The topic was set by ChanServ!services@services.oftc.net on 06/18/14 04:25 PM.
+[10:13] *** Channel modes: no messages from outside, topic protection
+[10:13] *** This channel was created on 04/25/14 07:05 AM.
+[10:14] <jlschatz> Hi all. Sorry to be off the grid for so long. My router is dying, I think. I hopped over to the library for their internet
+[10:21] <muninn-project> Bad router. Bad.
+[10:22] <jlschatz>  I was reading through the code last night. It looks like daemon.c received an object called (?) req with all the goods in it. I haven;t found where it's receiving it yet.
+[10:25] <muninn-project> It sohuld be through a pipe file.
+[10:25] <jlschatz> ok
+[10:25] <muninn-project> apache gets the url, passes to mod-tile who pushes it to the pipe which renderd reads.
+[10:26] <muninn-project> godam
+[11:40] [042] jlschatz 7DKAACK58 your unique ID
+[11:40] *** The channel topic is "OpenHistoricalMap - http://OpenHistoricalMap.org mapping the history of the world! ".
+[11:40] *** The topic was set by ChanServ!services@services.oftc.net on 06/18/14 04:25 PM.
+[11:40] *** Channel modes: no messages from outside, topic protection
+[11:40] *** This channel was created on 04/25/14 07:05 AM.
+[23:30] *** The channel topic is "OpenHistoricalMap - http://OpenHistoricalMap.org mapping the history of the world! ".
+[23:30] *** The topic was set by ChanServ!services@services.oftc.net on 06/18/14 04:25 PM.
+[23:30] *** Channel modes: no messages from outside, topic protection
+[23:30] *** This channel was created on 04/25/14 07:05 AM.
+[07:07] *** The channel topic is "OpenHistoricalMap - http://OpenHistoricalMap.org mapping the history of the world! ".
+[07:07] *** The topic was set by ChanServ!services@services.oftc.net on 06/18/14 04:25 PM.
+[07:08] *** Channel modes: no messages from outside, topic protection
+[07:08] *** This channel was created on 04/25/14 07:05 AM.
+[07:39] <jlschatz> I think/hope a little sleep might be making this clearer. (Clearer than the mud I was looking through last night, at least :) ) 
+[07:39] <jlschatz> I'm looking at the code here: https://github.com/OpenHistoricalMap/ohm_mod_tile/blob/master/renderd.py, near line 124, for example
+[07:39] <jlschatz> Is the ProtocolPacket being passed around the map described by the mapnik styles?
+[07:41] <jlschatz> If so, then we can add a self.t = t there after adding the t parameter in the styles? (Getting fuzzy again. :eyeroll: at myself)
+[07:41] <jlschatz> (And by there, I mean by everywhere there are refs to self.x, self.y and self.z)
+[07:50] <muninn-project> Morning
+[07:51] <jlschatz> Good morning
+[07:51] <jlschatz> Did you get any of that?
+[07:51] <muninn-project> Looking at it now.
+[07:52] <muninn-project> We likely need ot change the packet version to something else to prevent insanity later on.
+[07:53] <muninn-project> https://docs.python.org/2/library/struct.html
+[07:53] <muninn-project> let's make t a string for our uses if you agree?
+[07:54] <jlschatz> sounds good to me
+[07:54] <muninn-project> What its doing is moving everything into a packed binary structures.
+[07:54] <muninn-project> That get passed around 
+[07:54] <muninn-project>   data = struct.pack(self.fields, 2, status, x, y, z, xmlname)
+[07:55] <muninn-project> line 127  self.fields = "5i41sxxx"
+[07:55] <muninn-project> that describes how fields are packed
+[07:55] <jlschatz> thank you for the line ref! :)
+[07:56] <muninn-project> 7.3.2.2. Format Characters
+[07:56] <muninn-project> at https://docs.python.org/2/library/struct.html
+[07:56] <muninn-project> talks about the way to describe a format
+[07:58] <muninn-project> how long should a year be? -3500 to 2014? 5 byte string including the -
+[07:59] <jlschatz> ok. (we can avoid continental drift)
+[08:06] <jlschatz> oops, brb
+[08:07] [Away] You are now marked as being away (reason: Gone away for now).
+[08:10] <muninn-project> jlschatz: Let's try for a string now since that can support eras also.
+[08:28] [Away] You are no longer marked as being away.
+[08:30] <jlschatz> The doc talks about padding strings to make up for different lengths - we can use that, right? (Imagining trying to create a list of eras with a specific phrase length and shuddering)
+[08:31] <muninn-project> Right.
+[08:32] <muninn-project> Let's pad it to 5 bytes for now?
+[08:43] <jlschatz> Making sure I'm understanding - we change the format string to "5i4l5s" ?
+[08:45] <muninn-project> No. you have to add to it.
+[08:46] <muninn-project> 5i = 5 integers.
+[08:46] <muninn-project> 41s = 1st string 41 char long
+[08:46] * jlschatz nodding but not fully understanding
+[08:46] <muninn-project> xxx = 3 pad bytes
+[08:46] <jlschatz> so "514lsxxx5s" ?
+[08:46] <muninn-project> (originally)
+[08:47] <muninn-project> 20+41+3=64
+[08:48] <jlschatz> Oh - I thought that was an L
+[08:48] <jlschatz> (couldn't figure out why we'd need and int and a long)
+[08:48] <jlschatz> that makes a lot more sense.
+[08:48] <muninn-project> normally, we'd need to align things so that byte alignment makes sense if the struct gets moved from one machine to another.
+[08:49] <muninn-project> see 7.3.2.1. Byte Order, Size, and Alignment
+[08:49] <jlschatz> THat makes sense. I was reading the format string wrong - saw the 1 as an L
+[08:49] <jlschatz> reading there again
+[08:51] <muninn-project> I don't remeber the alightments anymore, but I suspect we can ingore it for a prototype.
+[08:51] <muninn-project> self.fields = "5i41s5s" should work as an experiemnt.
+[08:52] <jlschatz> j
+[08:52] <muninn-project> i?
+[08:52] <jlschatz> oops
+[08:53] <jlschatz> Trying to formulate my question. Failing.
+[08:53] <muninn-project> 1st syllable, 1st word?
+[08:54] <jlschatz> :)
+[08:54] <jlschatz> I'm confused about the version numbers on the ProtocolPackets
+[08:54] <jlschatz> At first I was thinking we would create a new version - but I only see V1 and V2 and not sure what they're there for, so I"m thinking no
+[08:55] <muninn-project> You should add V3.
+[08:55] <jlschatz> ok
+[08:55] <muninn-project> the version number is there to indicate to the code what type of struct it should expect
+[08:55] <muninn-project> so if the mod_tile sends V1, V2 or V3, renderd knows how to parse the structures.
+[08:56] <jlschatz> Ok, that's what I thought but then I wasn't sure why there were only 2 versions.
+[08:56] <jlschatz> Or why there are two versions and not just one - 
+[08:56] <jlschatz> I've got more reading to do, don't I? :)
+[08:58] <muninn-project> you have two peices of sofware talking over a binary connection: mod_tile and renderd
+[08:58] <muninn-project> mod_tile tells renderd "I'm sending you a binary structure, V1"
+[08:58] <muninn-project> rednerd reads the binary structure and parses it with the V1 code.
+[08:59] * jlschatz nodding, getting it
+[08:59] <muninn-project> THe V's make sure that both software packages are talking the same language.
+[08:59] <muninn-project> Now you're going to add V3, to make sure that you're answering a query with the 't' parameter instead of the other two.
+[08:59] <muninn-project> DAMM YOU NETSPLIT!
+[08:59] <jlschatz> Ok. What are the existing two versions? Are the two 2008 and 2009 maps the same version
+[09:00] <muninn-project> nonon.
+[09:00] <muninn-project> Versions of the binary protocol.
+[09:00] <muninn-project> Two peices of software, two maintiners.
+[09:00] <muninn-project> The V makes sure both software packages are talking the same protocol.
+[09:01] <muninn-project> V1 has self.fields = "5i"
+[09:01] <muninn-project> V2 has self.fields = "5i41sxxx"
+[09:02] <muninn-project> The V's jsut makes sure the tright structure is being parsed.
+[09:02] <jlschatz> Was this to make sure the new version wouldn't break systems that used the old?
+[09:02] <muninn-project> exactly.
+[09:02] <jlschatz> Ok got it.
+[09:02] <muninn-project> so if someone wrote new ways of doing things, like you, outdates software would complain instead of crashing.
+[09:02] * jlschatz finally getting it
+[09:03] <muninn-project> Ok.
+[09:03] <muninn-project> So you're adding v3 to account for your changes to renderd.
+[09:03] <muninn-project> and you'll add v3 to modtile later
+[09:03] <jlschatz> Yes.
+[09:06] <muninn-project> Welcome back SK53
+[09:06] * jlschatz waves Hi!
+[09:10] <muninn-project> jlschatz: AFK 10 mins.
+[09:36] <muninn-project> Back
+[10:43] <jlschatz> (at the risk of sounding like the parents in HISH's Frozen) So I've got V3 added and included self.t in the packing/unpacking in renderd.py. I've been searching through mod_tile.c (after re-reading the readme, which makes a lot more sense now) and 
+[10:44] <jlschatz> think I've found where the protocol is being passed in: `static int request_tile(request_rec *r, struct protocol *cmd, int renderImmediately)`, about line 187 in https://github.com/OpenHistoricalMap/ohm_mod_tile/blob/master/mod_tile.c
+[10:45] <muninn-project> Ok.
+[10:45] <jlschatz> Still going through. I took an into to C class when my now-driving son was still in diapers so I'm going slowly 
+[10:46] <jlschatz> (but remembering how much I loved C)
+[10:46] * jlschatz is being serious, no snark. jlschatz loves the language
+[10:47] <muninn-project> It's great if you want complete control over what the machine is doing
+[10:47] <muninn-project>  cmd->ver = PROTO_VER;
+[10:47] <muninn-project> line 205
+[10:48] <jlschatz> Yes - where is PROTO_VER set?
+[10:48] <jlschatz> That's the only reference to it in this file
+[10:48] <jlschatz> (unless Sublime Text is lying to me. Dirty computer)
+[10:49] <jlschatz> git grep to the rescue. checking stuff out (not literally)
+[10:50] <muninn-project> I'm looking for it. I expected it in mod_tile.h but it's not there either.
+[10:50] <jlschatz> protocol.h
+[10:51] <jlschatz> Am I reading that right - it's hardcoded to 2?  `#define PROTO_VER (2)`
+[10:51] <muninn-project> Yup.
+[10:51] <muninn-project> Now, you're going to hard code it to 3 ;)
+[10:51] <jlschatz> can we do an if something or other in that file to set it to 3 if we have a t?
+[10:51] <jlschatz> oops, typed over you
+[10:53] <muninn-project> You're better off making it 3 and having renderd ignoring a blank 't'.
+[10:53] <jlschatz> Cool :)
+[11:04] <jlschatz> I'm looking at places that reference the params and wonder if we should/can put in some logic so we don't go asking mod_tile to look at the variable t if it isn't there (or do we just default to current year or is this a conversation for another day?)
+[11:04] <muninn-project> Keep in mind that mod_tile generated this from the url
+[11:05] <muninn-project> /t/x/y/z.png
+[11:05] <muninn-project> having a blank t would be 
+[11:05] <muninn-project> //t/z/y/z
+[11:05] <muninn-project> which in may os's actually means
+[11:05] <muninn-project> //x/y/z -> /x/y/z
+[11:05] <muninn-project> and then the parsing becomes ambiguous.
+[11:06] <muninn-project> best to use the standad mod-tile for a normal layer and your mod tile for a time layer.
+[11:06] <muninn-project> because you are handling box V2 and V3 in renderd
+[11:06] <muninn-project> you can have both rendered by the same code.
+[11:06] <muninn-project> but you still need two mod_tiles.
+[11:07] <jlschatz> ok.
+[11:11] <jlschatz> afk for 5
+[11:11] <muninn-project> ok
+[11:14] <jlschatz> back
+[11:18] <muninn-project> !
+[11:19] <jlschatz> (is that a good ! or a bad ! ??)
+[11:21] <muninn-project> all s well
+[11:47] * jlschatz realizes oob means out of bounds
+[11:48] <jlschatz> Don't ever try googling oob. Pointless.
+[11:48] <muninn-project> Whate evil have you done.
+[11:48] <jlschatz> No, I fixed the evil.
+[11:49] <jlschatz> I was trying to understand a part of the code that's using x, y and z and trying to decide if/how to add t
+[11:49] <jlschatz> I'm at a variable called `oob`, couldn't figure it out right away so I searched
+[11:49] <jlschatz> Not helpful. Then it hit me, out of bounds
+[11:50] <jlschatz> duh on me, but finally got it
+[11:50] <muninn-project> I have days like that too.
+[11:51] <jlschatz> :)
+[23:00] [042] jlschatz 7DKAACOND your unique ID
+[23:00] *** The channel topic is "OpenHistoricalMap - http://OpenHistoricalMap.org mapping the history of the world! ".
+[23:00] *** The topic was set by ChanServ!services@services.oftc.net on 06/18/14 04:25 PM.
+[23:00] *** Channel modes: no messages from outside, topic protection
+[23:00] *** This channel was created on 04/25/14 07:05 AM.
+[08:39] [042] jlschatz 7DKAACPHG your unique ID
+[08:39] *** The channel topic is "OpenHistoricalMap - http://OpenHistoricalMap.org mapping the history of the world! ".
+[08:39] *** The topic was set by ChanServ!services@services.oftc.net on 06/18/14 04:25 PM.
+[09:23] <jlschatz> ping?
+[09:23] [042] jlschatz 7DKAACPKM your unique ID
+[09:23] [404] jlschatz #ohm Cannot send to channel
+[09:23] *** The channel topic is "OpenHistoricalMap - http://OpenHistoricalMap.org mapping the history of the world! ".
+[09:23] *** The topic was set by ChanServ!services@services.oftc.net on 06/18/14 04:25 PM.
+[09:23] <jlschatz> Yeay! It works!!
+[09:24] *** Channel modes: no messages from outside, topic protection
+[09:24] *** This channel was created on 04/25/14 07:05 AM.
+[09:24] <jlschatz> It's amazing what a new network cable can do!
+[09:25] * jlschatz apologizes for the technical difficulties. Ok, back to work FINALLY.
+[09:26] <muninn-project> Hurray!
+[10:19] <jlschatz> Here at line 1167 in mod_tile.c: https://github.com/OpenHistoricalMap/ohm_mod_tile/blob/master/mod_tile.c, the order of the x, y, z arguments changes. Does that matter? It's an error log print statement, so I don't think it does, but I'd like to make sure from you folks who are 1. more familiar with this and 2. much more familiar with C. (I fear the Gotcha.)
+[10:45] <muninn-project> sec
+[10:46] <jlschatz> no prob :)
+[10:47] <muninn-project> that's a function, unlcear where it is or what it's doing with the parameters
+[10:47] <muninn-project> do you wknow where its defined?
+[10:49] <jlschatz> not yet. The same function takes the params in a different order in different  places. I think it's the arguments for print formatting.
+[10:50] <muninn-project> yeah, but the format shold be defined soewhere
+[10:50] <jlschatz> ap_log_rerror(APLOG_MARK, APLOG_DEBUG, 0, r,
+[10:50] <jlschatz>                   "Read tile of length %i from %s: %s", len, rdata->store->tile_storage_id(rdata->store, cmd->xmlname, cmd->x, cmd->y, cmd->z, id), err_msg);
+[10:52] <jlschatz> The other places where this is called use the z, x, y order.  I couldn't see a difference btwn here and other places.
+[10:54] <muninn-project> tile_storage_id is a pointer
+[10:56] <muninn-project> store is at line 289
+[11:01] <muninn-project> take a look at store_file.c li ne 277
+[11:01] <muninn-project> it's a pointer to function file_tile_storeage_id.
+[11:01] <jlschatz> ok
+[11:02] <muninn-project> you'll need to mod that.
