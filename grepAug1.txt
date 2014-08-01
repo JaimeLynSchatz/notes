@@ -28,3 +28,6 @@ store_ro_composite.c:149:static char * ro_composite_tile_storage_id(struct stora
 store_ro_composite.c:247:    store->tile_storage_id = &ro_composite_tile_storage_id;
 store_ro_http_proxy.c:165:static char * ro_http_proxy_tile_storage_id(struct storage_backend * store, const char *xmlconfig, int x, int y, int z, char * string) {
 store_ro_http_proxy.c:263:    store->tile_storage_id = &ro_http_proxy_tile_storage_id;
+\n\ngit grep 'file_tile_storage_id'
+store_file.c:168:static char * file_tile_storage_id(struct storage_backend * store, const char *xmlconfig, int x, int y, int z, char * string) {
+store_file.c:277:    store->tile_storage_id = &file_tile_storage_id;
