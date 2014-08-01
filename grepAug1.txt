@@ -1,0 +1,30 @@
+git grep 'tile_storage_id'
+metatile.cpp:107:        syslog(LOG_WARNING, "Failed to write metatile to %s", store->tile_storage_id(store, xmlconfig_.c_str(),x_,y_,z_, tmp));
+mod_tile.c:952:                rdata->store->tile_storage_id(rdata->store, cmd->xmlname, cmd->x, cmd->y, cmd->z, storage_id));
+mod_tile.c:960:                         rdata->store->tile_storage_id(rdata->store, cmd->xmlname, cmd->x, cmd->y, cmd->z, storage_id));
+mod_tile.c:1167:                  "Read tile of length %i from %s: %s", len, rdata->store->tile_storage_id(rdata->store, cmd->xmlname, cmd->x, cmd->y, cmd->z, id), err_msg);
+render_expired.c:353:                        printf("deleting: %s\n", store->tile_storage_id(store, mapname, x, y, z, name));
+render_expired.c:360:                        printf("touch: %s\n", store->tile_storage_id(store, mapname, x, y, z, name));
+render_expired.c:366:                    printf("render: %s\n", store->tile_storage_id(store, mapname, x, y, z, name));
+render_expired.c:388:                    printf("not on disk: %s\n", store->tile_storage_id(store, mapname, x, y, z, name));
+render_list.c:297:                    printf("Tile %s is clean, ignoring\n", store->tile_storage_id(store, mapname, x, y, z, name));
+store.h:30:        char * (*tile_storage_id)(struct storage_backend * store, const char *xmlconfig, int x, int y, int z, char * string);
+store_file.c:168:static char * file_tile_storage_id(struct storage_backend * store, const char *xmlconfig, int x, int y, int z, char * string) {
+store_file.c:277:    store->tile_storage_id = &file_tile_storage_id;
+store_memcached.c:137:static char * memcached_tile_storage_id(struct storage_backend * store, const char *xmlconfig, int x, int y, int z, char * string) {
+store_memcached.c:164:    log_message(STORE_LOGLVL_DEBUG, "Trying to create and write a metatile to %s\n", memcached_tile_storage_id(store, xmlconfig, x, y, z, tmp));
+store_memcached.c:257:    store->tile_storage_id = &memcached_tile_storage_id;
+store_null.c:48:static char * tile_storage_id(struct storage_backend * store, 
+store_null.c:73:   store->tile_storage_id = &tile_storage_id;
+store_rados.c:188:static char * rados_tile_storage_id(struct storage_backend * store, const char *xmlconfig, int x, int y, int z, char * string) {
+store_rados.c:214:    log_message(STORE_LOGLVL_DEBUG, "Trying to create and write a tile to %s\n", rados_tile_storage_id(store, xmlconfig, x, y, z, tmp));
+store_rados.c:218:        log_message(STORE_LOGLVL_ERR, "cannot write %s: %s\n", rados_tile_storage_id(store, xmlconfig, x, y, z, tmp), strerror(-err));
+store_rados.c:239:        log_message(STORE_LOGLVL_ERR, "failed to delete %s: %s\n", rados_tile_storage_id(store, xmlconfig, x, y, z, tmp), strerror(-err));
+store_rados.c:259:            log_message(STORE_LOGLVL_DEBUG, "Tile %s does not exist, can't expire", rados_tile_storage_id(store, xmlconfig, x, y, z, tmp));
+store_rados.c:262:            log_message(STORE_LOGLVL_ERR, "Failed to read tile metadata for %s: %s", rados_tile_storage_id(store, xmlconfig, x, y, z, tmp), strerror(-err));
+store_rados.c:272:        log_message(STORE_LOGLVL_ERR, "failed to write expiry data for %s: %s", rados_tile_storage_id(store, xmlconfig, x, y, z, tmp), strerror(-err));
+store_rados.c:381:    store->tile_storage_id = &rados_tile_storage_id;
+store_ro_composite.c:149:static char * ro_composite_tile_storage_id(struct storage_backend * store, const char *xmlconfig, int x, int y, int z, char * string) {
+store_ro_composite.c:247:    store->tile_storage_id = &ro_composite_tile_storage_id;
+store_ro_http_proxy.c:165:static char * ro_http_proxy_tile_storage_id(struct storage_backend * store, const char *xmlconfig, int x, int y, int z, char * string) {
+store_ro_http_proxy.c:263:    store->tile_storage_id = &ro_http_proxy_tile_storage_id;
