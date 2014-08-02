@@ -1,0 +1,321 @@
+Current status of all changes made to ohm_mod_tile as of EOD 1 Aug 2014\n\n
+diff --git a/daemon.c b/daemon.c
+index feb4d2e..4e44d19 100644
+--- a/daemon.c
++++ b/daemon.c
+@@ -93,7 +93,8 @@ enum protoCmd rx_request(const struct protocol *req, int fd)
+         reqnew->xmlname[0] = 0;
+         req = reqnew;
+     }
+-    else if (req->ver != 2) {
++    // Version 3 of the protocol is for time queries TODO: Determine if we really want to do this here. Should it branch??
++    else if (req->ver != 2 && req->ver != 3) {
+         syslog(LOG_ERR, "Bad protocol version %d", req->ver);
+         return cmdIgnore;
+     }
+diff --git a/mod_tile.c b/mod_tile.c
+index 4d33e2c..94d8ef3 100644
+--- a/mod_tile.c
++++ b/mod_tile.c
+@@ -202,7 +202,7 @@ static int request_tile(request_rec *r, struct protocol *cmd, int renderImmediat
+     }
+ 
+     // cmd has already been partial filled, fill in the rest
+-    cmd->ver = PROTO_VER;
++    cmd->ver = PROTO_VER;    // this is set in protocol.h, set to 3 for time queries
+     switch (renderImmediately) {
+     case 0: { cmd->cmd = cmdDirty; break;}
+     case 1: { cmd->cmd = cmdRender; break;}
+@@ -211,7 +211,7 @@ static int request_tile(request_rec *r, struct protocol *cmd, int renderImmediat
+ 
+     if (scfg->bulkMode) cmd->cmd = cmdRenderBulk; 
+ 
+-    ap_log_rerror(APLOG_MARK, APLOG_INFO, 0, r, "Requesting style(%s) z(%d) x(%d) y(%d) from renderer with priority %d", cmd->xmlname, cmd->z, cmd->x, cmd->y, cmd->cmd);
++    ap_log_rerror(APLOG_MARK, APLOG_INFO, 0, r, "Requesting style(%s) t(%s) z(%d) x(%d) y(%d) from renderer with priority %d", cmd->xmlname, cmd-> t, cmd->z, cmd->x, cmd->y, cmd->cmd);
+     do {
+         ret = send(fd, cmd, sizeof(struct protocol), 0);
+ 
+@@ -250,7 +250,7 @@ static int request_tile(request_rec *r, struct protocol *cmd, int renderImmediat
+                     break;
+                 }
+ 
+-                if (cmd->x == resp.x && cmd->y == resp.y && cmd->z == resp.z && !strcmp(cmd->xmlname, resp.xmlname)) {
++                if (cmd->t == resp.t && cmd->x == resp.x && cmd->y == resp.y && cmd->z == resp.z && !strcmp(cmd->xmlname, resp.xmlname)) {
+                     close(fd);
+                     if (resp.cmd == cmdDone)
+                         return 1;
+@@ -258,13 +258,13 @@ static int request_tile(request_rec *r, struct protocol *cmd, int renderImmediat
+                         return 0;
+                 } else {
+                     ap_log_rerror(APLOG_MARK, APLOG_WARNING, 0, r,
+-                       "Response does not match request: xml(%s,%s) z(%d,%d) x(%d,%d) y(%d,%d)", cmd->xmlname,
+-                       resp.xmlname, cmd->z, resp.z, cmd->x, resp.x, cmd->y, resp.y);
++                       "Response does not match request: xml(%s,%s) t(%s,%s) z(%d,%d) x(%d,%d) y(%d,%d)", cmd->xmlname,
++                       resp.xmlname, cmd->t, resp.t, cmd->z, resp.z, cmd->x, resp.x, cmd->y, resp.y);
+                 }
+             } else {
+                 ap_log_rerror(APLOG_MARK, APLOG_DEBUG, 0, r,
+-                              "request_tile: Request xml(%s) z(%d) x(%d) y(%d) could not be rendered in %i seconds",
+-                              cmd->xmlname, cmd->z, cmd->x, cmd->y,
++                              "request_tile: Request xml(%s) t(%s) z(%d) x(%d) y(%d) could not be rendered in %i seconds",
++                              cmd->xmlname, cmd->t, cmd->z, cmd->x, cmd->y,
+                               (renderImmediately > 1?scfg->request_timeout_priority:scfg->request_timeout));
+                 break;
+             }
+@@ -346,10 +346,10 @@ static enum tileState tile_state(request_rec *r, struct protocol *cmd)
+     struct stat_info stat;
+     struct tile_request_data * rdata = (struct tile_request_data *)ap_get_module_config(r->request_config, &tile_module);
+ 
+-    stat = rdata->store->tile_stat(rdata->store, cmd->xmlname, cmd->x, cmd->y, cmd->z);
++    stat = rdata->store->tile_stat(rdata->store, cmd->xmlname, cmd->t, cmd->x, cmd->y, cmd->z);
+ 
+     ap_log_rerror(APLOG_MARK, APLOG_DEBUG, 0, r, "tile_state: determined state of %s %i %i %i on store %pp: Tile size: %li, expired: %i created: %li",
+-                      cmd->xmlname, cmd->x, cmd->y, cmd->z, rdata->store, stat.size, stat.expired, stat.mtime);
++                      cmd->xmlname, cmd->t, cmd->x, cmd->y, cmd->z, rdata->store, stat.size, stat.expired, stat.mtime);
+ 
+     r->finfo.mtime = stat.mtime * 1000000;
+     r->finfo.atime = stat.atime * 1000000;
+@@ -949,7 +949,7 @@ static int tile_handler_status(request_rec *r)
+     state = tile_state(r, cmd);
+     if (state == tileMissing)
+         return error_message(r, "No tile could not be found at storage location: %s\n",
+-                rdata->store->tile_storage_id(rdata->store, cmd->xmlname, cmd->x, cmd->y, cmd->z, storage_id));
++                rdata->store->tile_storage_id(rdata->store, cmd->xmlname, cmd->t, cmd->x, cmd->y, cmd->z, storage_id));
+     apr_ctime(mtime_str, r->finfo.mtime);
+     apr_ctime(atime_str, r->finfo.atime);
+ 
+@@ -957,7 +957,7 @@ static int tile_handler_status(request_rec *r)
+                          "(Dates might not be accurate. Rendering time might be reset to an old date for tile expiry."
+                          " Access times might not be updated on all file systems)\n",
+                          (state == tileOld) ? "due to be rendered" : "clean", mtime_str, atime_str,
+-                         rdata->store->tile_storage_id(rdata->store, cmd->xmlname, cmd->x, cmd->y, cmd->z, storage_id));
++                         rdata->store->tile_storage_id(rdata->store, cmd->xmlname, cmd->t, cmd->x, cmd->y, cmd->z, storage_id));
+ }
+ 
+ /**
+@@ -1139,7 +1139,7 @@ static int tile_handler_serve(request_rec *r)
+         return HTTP_NOT_FOUND;
+     }
+ 
+-    ap_log_rerror(APLOG_MARK, APLOG_DEBUG, 0, r, "tile_handler_serve: xml(%s) z(%d) x(%d) y(%d)", cmd->xmlname, cmd->z, cmd->x, cmd->y);
++    ap_log_rerror(APLOG_MARK, APLOG_DEBUG, 0, r, "tile_handler_serve: xml(%s) t(%s) z(%d) x(%d) y(%d)", cmd->xmlname, cmd->t, cmd->z, cmd->x, cmd->y);
+ 
+     tile_configs = (tile_config_rec *) scfg->configs->elts;
+ 
+@@ -1162,9 +1162,9 @@ static int tile_handler_serve(request_rec *r)
+ 
+     err_msg[0] = 0;
+ 
+-    len = rdata->store->tile_read(rdata->store, cmd->xmlname, cmd->x, cmd->y, cmd->z, buf, tile_max, &compressed, err_msg);
++    len = rdata->store->tile_read(rdata->store, cmd->xmlname, cmd->t, cmd->x, cmd->y, cmd->z, buf, tile_max, &compressed, err_msg);
+     ap_log_rerror(APLOG_MARK, APLOG_DEBUG, 0, r,
+-                  "Read tile of length %i from %s: %s", len, rdata->store->tile_storage_id(rdata->store, cmd->xmlname, cmd->x, cmd->y, cmd->z, id), err_msg);
++                  "Read tile of length %i from %s: %s", len, rdata->store->tile_storage_id(rdata->store, cmd->xmlname, cmd->t, cmd->x, cmd->y, cmd->z, id), err_msg);
+     if (len > 0) {
+         if (compressed) {
+             const char* accept_encoding = apr_table_get(r->headers_in,"Accept-Encoding");
+@@ -1269,7 +1269,7 @@ static int tile_translate(request_rec *r)
+                 return OK;
+             }
+ 
+-            n = sscanf(r->uri+strlen(tile_config->baseuri),"%d/%d/%d.%[a-z]/%10s", &(cmd->z), &(cmd->x), &(cmd->y), extension, option);
++            n = sscanf(r->uri+strlen(tile_config->baseuri),"%s/%d/%d/%d.%[a-z]/%10s", &(cmd->t), &(cmd->z), &(cmd->x), &(cmd->y), extension, option);
+             if (n < 4) {
+                 ap_log_rerror(APLOG_MARK, APLOG_DEBUG, 0, r, "tile_translate: Invalid URL for tilelayer %s", tile_config->xmlname);
+                 return DECLINED;
+@@ -1322,8 +1322,8 @@ static int tile_translate(request_rec *r)
+                 r->handler = "tile_serve";
+             }
+ 
+-            ap_log_rerror(APLOG_MARK, APLOG_DEBUG, 0, r, "tile_translate: op(%s) xml(%s) mime(%s) z(%d) x(%d) y(%d)",
+-                    r->handler , cmd->xmlname, tile_config->mimeType, cmd->z, cmd->x, cmd->y);
++            ap_log_rerror(APLOG_MARK, APLOG_DEBUG, 0, r, "tile_translate: op(%s) xml(%s) mime(%s) t(%s) z(%d) x(%d) y(%d)",
++                    r->handler , cmd->xmlname, tile_config->mimeType, cmd->t, cmd->z, cmd->x, cmd->y);
+ 
+             return OK;
+         }
+diff --git a/protocol.h b/protocol.h
+index eb908d3..3ff5031 100644
+--- a/protocol.h
++++ b/protocol.h
+@@ -16,7 +16,7 @@ extern "C" {
+  * causing responses to get slightly out of step with requests.
+  */
+ #define TILE_PATH_MAX (256)
+-#define PROTO_VER (2)
++#define PROTO_VER (3)   // hard-coded to 3 to allow for time queries
+ #define RENDER_SOCKET "/var/run/renderd/renderd.sock"
+ #define XMLCONFIG_MAX 41
+ 
+diff --git a/renderd.py b/renderd.py
+index d836491..db49d7c 100755
+--- a/renderd.py
++++ b/renderd.py
+@@ -55,6 +55,7 @@ class ProtocolPacket:
+     def __init__(self, version, fields = ""):
+         self.version = version
+         self.xmlname = ""
++        self.t = 0
+         self.x = 0
+         self.y = 0
+         self.z = 0
+@@ -68,6 +69,7 @@ class ProtocolPacket:
+ 
+     def bad_request(self):
+         # Check that the requested (x,y,z) is invalid
++        t = self.t
+         x = self.x
+         y = self.y
+         z = self.z
+@@ -79,11 +81,12 @@ class ProtocolPacket:
+             return True
+         if (y < 0) or (y > limit):
+             return True
++        # if (t outside of acceptable range) TODO: error check the t query string against available times?
+         return False
+ 
+     def meta_tuple(self):
+         # This metatile tuple is used to identify duplicate request in the rendering queue
+-        return (self.xmlname, self.mx, self.my, self.z)
++        return (self.xmlname, self.t, self.mx, self.my, self.z)
+ 
+ class ProtocolPacketV1(ProtocolPacket):
+     def __init__(self):
+@@ -156,6 +159,44 @@ class ProtocolPacketV2(ProtocolPacket):
+                if e[0] != errno.EBADF:
+                    raise
+ 
++# Version 3 is used to time-based queries in the OHM
++class ProtocolPacketV3(ProtocolPacket):
++    def __init__(self):
++        ProtocolPacket(3)
++        self.fields = "5i41sxxx5s"  # for year queries in the range of (-35000, 2014)
++
++    def receive(self, data, dest):
++        version, request, t, x, y, z, xmlname = struct.unpack(self.fields, data)
++
++        if version != 3:
++            print "Received V3 packet with incorect version %d" % version
++        else:
++            print "Got V2 request, command(%d), xmlname(%s), x(%d), y(%d), z(%d)" \
++                % (request, xmlname, t, x, y, z)
++            self.commandStatus = request
++            self.t = t
++            self.x = x
++            self.y = y
++            self.z = z
++            self.xmlname = xmlname.rstrip('\000') # Remove trailing NULs
++            # Calculate Meta-tile value for this x/y
++            self.mx = x & ~(METATILE-1)
++            self.my = y & ~(METATILE-1)
++            self.dest = dest
++
++    def send(self, status):
++        x = self.t
++        x = self.x
++        y = self.y
++        z = self.z
++        xmlname = self.xmlname
++        data = struct.pack(self.fields, 2, status, t, x, y, z, xmlname)
++        try:
++            self.dest.send(data)
++        except socket.error, e:
++               if e[0] != errno.EBADF:
++                   raise
++
+ DEG_TO_RAD = pi/180
+ RAD_TO_DEG = 180/pi
+ 
+@@ -476,7 +517,9 @@ class ThreadedUnixStreamHandler(SocketServer.BaseRequestHandler):
+         #print "%s: New connection" % cur_thread.getName()
+         len_v1 = ProtocolPacketV1().len()
+         len_v2 = ProtocolPacketV2().len()
++        len_v3 = ProtocolPacketV3().len()
+         max_len = max(len_v1, len_v2)
++        max_len = max(max_len, len_v3)
+ 
+         while True:
+             try:
+@@ -496,6 +539,10 @@ class ThreadedUnixStreamHandler(SocketServer.BaseRequestHandler):
+                 req_v2 = ProtocolPacketV2()
+                 req_v2.receive(data, self.request)
+                 self.rx_request(req_v2)
++            if len(data) == len_v3:
++                req_v3 = ProtocolPacketV3()
++                req_v2.receive(data, self.request)
++                self.rx_request(req_v3)
+             elif len(data) == 0:
+                 #print "%s: Connection closed" % cur_thread.getName()
+                 break
+diff --git a/store_file.c b/store_file.c
+index 2d0bdab..4840ced 100644
+--- a/store_file.c
++++ b/store_file.c
+@@ -43,7 +43,7 @@ static time_t getPlanetTime(const char * tile_dir, const char * xmlname)
+     return st_stat.st_mtime;
+ }
+ 
+-static int file_tile_read(struct storage_backend * store, const char *xmlconfig, int x, int y, int z, char *buf, size_t sz, int * compressed, char * log_msg) {
++static int file_tile_read(struct storage_backend * store, const char *xmlconfig, char * t, int x, int y, int z, char *buf, size_t sz, int * compressed, char * log_msg) {
+ 
+     char path[PATH_MAX];
+     int meta_offset, fd;
+@@ -52,7 +52,7 @@ static int file_tile_read(struct storage_backend * store, const char *xmlconfig,
+     struct meta_layout *m = (struct meta_layout *)malloc(header_len);
+     size_t file_offset, tile_size;
+ 
+-    meta_offset = xyz_to_meta(path, sizeof(path), store->storage_ctx, xmlconfig, x, y, z);
++    meta_offset = xyz_to_meta(path, sizeof(path), store->storage_ctx, xmlconfig, t, x, y, z);
+ 
+     fd = open(path, O_RDONLY);
+     if (fd < 0) {
+@@ -137,12 +137,12 @@ static int file_tile_read(struct storage_backend * store, const char *xmlconfig,
+     return pos;
+ }
+ 
+-static struct stat_info file_tile_stat(struct storage_backend * store, const char *xmlconfig, int x, int y, int z) {
++static struct stat_info file_tile_stat(struct storage_backend * store, const char *xmlconfig, char * t, int x, int y, int z) {
+     struct stat_info tile_stat;
+     struct stat st_stat;
+     char meta_path[PATH_MAX];
+ 
+-    xyz_to_meta(meta_path, sizeof(meta_path), (char *)(store->storage_ctx), xmlconfig, x, y, z);
++    xyz_to_meta(meta_path, sizeof(meta_path), (char *)(store->storage_ctx), xmlconfig, t, x, y, z);
+     
+     if (stat(meta_path, &st_stat)) {
+         tile_stat.size = -1;
+@@ -165,7 +165,7 @@ static struct stat_info file_tile_stat(struct storage_backend * store, const cha
+     return tile_stat;
+ }
+ 
+-static char * file_tile_storage_id(struct storage_backend * store, const char *xmlconfig, int x, int y, int z, char * string) {
++static char * file_tile_storage_id(struct storage_backend * store, const char *xmlconfig, char * t, int x, int y, int z, char * string) {
+     char meta_path[PATH_MAX];
+ 
+     xyz_to_meta(meta_path, sizeof(meta_path), (char *)(store->storage_ctx), xmlconfig, x, y, z);
+@@ -174,7 +174,7 @@ static char * file_tile_storage_id(struct storage_backend * store, const char *x
+ }
+     
+ 
+-static int file_metatile_write(struct storage_backend * store, const char *xmlconfig, int x, int y, int z, const char *buf, int sz) {
++static int file_metatile_write(struct storage_backend * store, const char *xmlconfig, char * t, int x, int y, int z, const char *buf, int sz) {
+     int fd;
+     char meta_path[PATH_MAX];
+     char * tmp;
+@@ -222,14 +222,14 @@ static int file_metatile_delete(struct storage_backend * store, const char *xmlc
+     return unlink(meta_path);
+ }
+ 
+-static int file_metatile_expire(struct storage_backend * store, const char *xmlconfig, int x, int y, int z) {
++static int file_metatile_expire(struct storage_backend * store, const char *xmlconfig, char * t, int x, int y, int z) {
+ 
+     char name[PATH_MAX];
+     struct stat s;
+     static struct tm touchCalendar;
+     struct utimbuf touchTime;
+ 
+-    xyz_to_meta(name, sizeof(name), store->storage_ctx, xmlconfig, x, y, z);
++    xyz_to_meta(name, sizeof(name), store->storage_ctx, xmlconfig, t, x, y, z);
+ 
+     if (stat(name, &s) == 0) {// 0 is success
+         // tile exists on disk; mark it as expired

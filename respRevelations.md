@@ -16,6 +16,11 @@ Initially, it looks like the resp is never modified, BUT:
 
 	bzero() clears the memory at that location so that it can accept from recv()  (http://man7.org/linux/man-pages/man2/recvmsg.2.html)
 
+We're getting into sockets here. See the slides on this site: http://home.iitk.ac.in/~chebrolu/scourse/slides/sockets-tutorial.pdf
+
+
+the Code makes extensive use of the built-in struct called request_rec. It's refered to as 'r' throughout the code. See man pages or http://ci.apache.org/projects/httpd/trunk/doxygen/structrequest__rec.html#_details
+
 Later at line 509 and through, resp is used to take the http response constant (which is being defined in a http_response.h header file that is imported in, not in the main codebase - part of C? Found in http://google.github.io/google-api-cpp-client/latest/doxygen/http__types_8h_source.html)
 
 
