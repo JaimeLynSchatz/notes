@@ -1,0 +1,264 @@
+OHM Hangout Notes
+August 5, 2014
+Google Hangout
+In attendance: Susanna, Jerry, John Erling Blad, Robert Warren, Tim Waters, Jaime Schatz
+Links from call:
+	* Interesting prject presenting at Wikimania http://histropedia.uat.co/Home.aspx?bjhjm68jyr
+	* Another historical project http://orbis.stanford.edu/
+	* Roman Roads in Wikimaps http://www.openhistoricalmap.org/#map=8/52.071/-2.357&layers=H
+	* Costs for Wikimaps project https://docs.google.com/spreadsheets/d/1JA3TsNNLjZG0OphjTNjTcvB5QZHTgH4xXRWa8-IAqTo/edit?usp=sharing
+	*  http://google-opensource.blogspot.co.uk/2014/04/qlabel-multilingual-content-without.html
+	*  From John Erling
+	*  Jerry's recommendation for next year: http://www.cost.eu/domains_actions/ict/Actions/IC1203
+	*  Another way for funding http://europa.eu/rapid/press-release_IP-14-840_en.htm and getting map data
+	*  HOT link http://hot.openstreetmap.org/get-involved
+	*  Etherpad notes link: http://wmfi.muistio.tieke.fi/wikimaps-online-9-140805
+
+I. Wikimedia, et al grants for the Wikimaps project
+Wikimedia applications are due next month.
+Susanna is going to be tied up with this for the next few months. 
+It's time to talk strategy.
+For what shall the group apply? What's the scope for the end of the year and the scope for the next few years?
+
+Where to apply:
+	* WikimediaFi/Wikimedia: growing over 20%
+
+See spreadsheet
+
+Susanna would like to see a shift toward gathering data, GLAM camps, etc.
+We're trying to "grasp the whole world" (great phrase)
+The project may/will need some scope adjustments.
+
+The budget is too big to be realistic, but is in part a project proposal.
+
+Robert asked if this is all through WikimediaFi or other organizatons.
+
+Looking at the individual items, there are clusters in development, that have different organizations (Wikimedia, Wikimaps, OHM)
+
+Project-wise, Susanna thinks our goal is to finaliza many of the things that are already on our list of goals. If they don't get 
+
+Backburn workshop? Map search finally defined this year. May not have the resources to complete this year. But realized next year.
+
+Requiring wikidata for the maps, that will need to wait for a different iteration.
+
+Many of the projects may see adjustments (signal broke)
+
+Making the modifications to the ID editor will be a big task that hasn't started yet.
+
+Rob and Jaime are working on the OHM getting the renderer time aware, will need to get the ID time aware and then getting it to look according to spec.
+
+Jerry's work on adding data from Nominatum. Take something from it to modify and amend for our uses. 
+
+Susanna: Perhaps time to reach out to the other parties to find ways to tie the projects together. Susanna was at a geo project and people knew each other. It would be funny to not try to bind these projects together. To try to synchronize. The first step is to link in Wikimaps and Wikidata, but there's a lot out there 
+
+Rob: What can we do to get you funding for next year, Susanna?
+Susanna: Would like to be full time on the project. Needs to be.
+Rob: What do you need, mechanically, to find the funding.
+Susanna: Clarifying what we are up to, package it up in a proposal and deliver it to the funding organizations. Susanna will find out what WikimediaFi/Nordic (fuzzy) are looking for. Susanna will try to feel that out.
+
+Defining a new extended project: John Erling
+If the original description wasn't enough, we should extend it to include our plans. People might be more willing to fund a broader project because of the important work it's doing. the thing we are trying to do is important to people. We need to 1. demonstrate what we're doing and 2. integrate interested parties.
+
+Susanna: we would like to do this, too much depends on the Nordic Wikimedia chapters (both their productivity) and on their desire to continue with this project.
+
+John Erling: People are aware of what we're doing and should be involved (inaudible in some spots)
+
+Susanna: We should continue logically, and to continue updating the environment
+
+John Erling: maybe have a discussion off-call of another potential funding source because this project crosses borders. Additional funding through the EU because of the geographical scale. John Erling will seek out input from people more directly involved
+
+Rob: Horizon 2020?
+
+John Erling: will get more info and speak to the parties
+
+Susanna: So far, relieved that we haven't had any European funding because of the bureaocracy. It creates overhead, but one has to see if we can obtain enough funding without going down that road. Would it mean different people in charge of the project?
+
+Rob: Horizon 2020 + State of the Map discussion. Some of our map data would bring up helpful data for commercial use. The alignment of interest is there. It's in the corporations' best interest, public safety interest.
+
+Susanna: what is the CFP timline like? Requesting this will require a shift in gears.
+
+Rob: needs to leave
+
+Susanna: Interested in the State of the Map project. Looking up Creative Europe. Deadline: November 1st. (!!)
+
+Jerry used to do a lot of grant proposals. Small groups are preferable for the development work, but having a consortium to do the grant proposals shares the workload and lends credibility to each smaller group. 
+
+Susanna: Why hasn't OSM jumped on board with this source of funding? Perhaps becuase they're not just *one* organization
+
+Jerry: Build up a network of people to build up some ideas. The cost of producing these funding requests can be greater than the cost of producing the work in the first place.
+
+Susanna: Open GLAM has been talking about creating a cost network, as well If we stay small, the opportunity might slip away from us. But we also shouldn't ask for what we need.
+
+Jerry: You always ask for more than what you need becuase they'll only give you 60% of what you ask for. Find bits in the project that can be flexed in case your funding isn't enough. You need to know *what* you can expand on and what you can live without.
+
+Susanna: Call to action: Participate in prioritizing. What's intersting to us and what other outside interests might think are important to approach. The project proposal is (intentionally) looking like a mixed bag. What are people's opinion on this?
+
+(Tim has to leave, making plans for Wikimania this weekend)
+
+Susanna: Because Jeff couldn't make it and because so many people need to leave, we should continue this discussion online so that we can discuss how to go forward. Primarily, we need to continue with the Nordic funding, but we need to consider the HOT approach of sprints and project-based work. Is HOT on-location? Yes, we think so. (both)
+
+There's some common ground between Wikimaps/HOT. Something to discuss at State of the Map. Finding common ground methodologically.
+
+John Erling: (bad sound) be careful about how we use the data, some have specific terms of use
+
+Susanna: thinking about ways to work with historical imagery, not necessarily using the data obtained in approaching a disaster. Studying the *way* HOT maps things and the way they organize the teams. We could borrow ideas from that. 
+
+John Erling: need to be clear on what we are doing and making. What other people do with the data is a separate issue.
+
+Susanna: Thinking less about changing what we're doing in this project (and *not*) going into disaster zones. Keeping our context but perhaps borrowing methodologies of HOT (sprints, project-based, using some of HOT's tools). Not using our tools for disaster mapping, but using disaster methods for GLAM mapping.
+
+John Erling: Be careful. Don't give anybody reason to argue whether this is providing cultural good. 
+
+Jerry SKEB	9:28 AM (from chat)
+I think John's point is that funding bodies are very worried about their money being used for other things: enabling technologies like wikimedia commons; OSM, OHM, HOT etc. does create an issue. Also because there are shared platforms. So I do agree it is a point to be aware of this when seeking funding.
+I had problems with some collaborators on projects I managed wh were tending to treat all their grants as a single pot. The rest of us weren't happy.
+
+Susanna: Yes, if we switch domains, we will lose the support of our current supporters and interested parties. Sometimes people will seek to misunderstand something.
+
+John Erling: We need to demonstrate how we can use this in a Wikimedia project.
+
+Susanna: We need to keep the promises of our project while expanding. We want to make sure that when we expand we don't leave anything behind.
+
+Jaime will send Susanna a link to her progress reports.
+
+	
+Tim Waters	8:13 AM
+http://histropedia.uat.co/Home.aspx?bjhjm68jyr  looks interesting
+Susanna Ånäs invited people into the video call.
+	
+Rob Warren	8:14 AM
+tim: very slick time line.
+	
+Tim Waters	8:14 AM
+its being presented at wmaina
+John Erling Blad joined group chat.
+	
+Rob Warren	8:15 AM
+Typical English Weather
+	
+John Erling Blad	8:16 AM
+Its cloudy here, thank God! It has been steamy hot here..
+	
+Jerry SKEB	8:18 AM
+Actually its a change from what we've had recently!
+Another site I find interesting http://orbis.stanford.edu/
+I've stuck some Roman roads into OHM
+http://www.openhistoricalmap.org/#map=8/52.071/-2.357&layers=H
+	
+Susanna Ånäs	8:20 AM
+https://docs.google.com/spreadsheets/d/1JA3TsNNLjZG0OphjTNjTcvB5QZHTgH4xXRWa8-IAqTo/edit?usp=sharing
+	
+me	8:25 AM
+Loud lawnmower and dog outside, but making notes :)
+	
+Rob Warren	8:27 AM
+'ok.
+	
+Jerry SKEB	8:27 AM
+looks like 18 mm total
+man months
+	
+me	8:27 AM
+Let me know if it's too loud
+	
+Jerry SKEB	8:27 AM
+or perhaps person months
+actually great piece in this weeks economist more or less saying male/female differences much more determined by development index
+	
+Rob Warren	8:32 AM
+Let's make a game out of it.
+	
+Tim Waters	8:32 AM
+maproulette
+	
+Rob Warren	8:32 AM
+...for tourists ;)
+	
+Jerry SKEB	8:36 AM
+I had a look at Nominatim & had brief discussion with lonvia: it requires quite a bit of refactoring for using temporal queries (and I'm not exactly what Jamie has done already)
+	
+John Erling Blad	8:37 AM
+snapmap
+more money in it
+nothing serious
+	
+Jerry SKEB	8:46 AM
+Andy Mabbett sent me this link which I found as clear as mud ! http://google-opensource.blogspot.co.uk/2014/04/qlabel-multilingual-content-without.html
+	
+John Erling Blad	8:48 AM
+I am for defining a new extended project
+	
+Jerry SKEB	8:56 AM
+Is that whatever the new Framework programme is called (Horizon2020)
+	
+Rob Warren	8:56 AM
+yup
+	
+Jerry SKEB	8:57 AM
+Would agree that EU funding is good (overhead is basically in bidding), sadly I'm about 20 years out of practice.
+	
+John Erling Blad	8:57 AM
+There is a new program in EU, called Creative Europe. It is necessary
+to have several participants in different countries. If 3 countries is
+involved the total funding is 200.000 euro, while at 5 countries th
+total is 2.000.000 euro. Note that the funding is up to 50% of the
+total.
+	
+Jerry SKEB	9:00 AM
+The 50% is usually fully loaded costs & for large firms is usually salary * 2.5
+I'd guess average run rate is around 10k EUR / person month
+	
+John Erling Blad	9:01 AM
+http://ec.europa.eu/programmes/creative-europe/index_en.htm
+Rob Warren left group chat.
+	
+Jerry SKEB	9:02 AM
+It is usually realistic to not just respond to a call: its much better to get a better some contacts & get a really good idea of how to bid (i.e., I recommend this for next year not now)
+http://www.cost.eu/domains_actions/ict/Actions/IC1203
+	
+John Erling Blad	9:08 AM
+I have difficulty hearing the discussion, so I can't give any reply
+The sound breaks up
+:D
+	
+Jerry SKEB	9:08 AM
+Sorry, I'm supportting your idea & suggesting we should follow up EU funding, but perpahs in a staged way which enables building of contacts
+For instance Cost Actions
+Yeah, you need friendly academics in tow
+	
+John Erling Blad	9:10 AM
+This could be an interesting thing as maps often are owned by public sector http://europa.eu/rapid/press-release_IP-14-840_en.htm
+Yeah!
+&0% more than you assume to use, and get additional funding from other sources as you usually get only up to 50% - probably less than that too
+80%
+	
+me	9:14 AM
+I'm too new to have an informed opinion on what's most pressing.
+Tim Waters left group chat.
+	
+Jerry SKEB	9:16 AM
+077 9103 4742 & its on my OSM User page on the wiki
+Well hopefully we can chat a bit in London later in the week
+	
+me	9:21 AM
+http://hot.openstreetmap.org/get-involved they do both remote and on-site field work
+	
+Jerry SKEB	9:28 AM
+I think John's point is that funding bodies are very worried about their money being used for other things: enabling technologies like wikimedia commons; OSM, OHM, HOT etc. does create an issue. Also because there are shared platforms. So I do agree it is a point to be aware of this when seeking funding.
+I had problems with some collaborators on projects I managed wh were tending to treat all their grants as a single pot. The rest of us weren't happy.
+	
+Susanna Ånäs	9:33 AM
+http://wmfi.muistio.tieke.fi/wikimaps-online-9-140805
+	
+me	9:34 AM
+I've been making some notes, can use some clarifications from where sound bounced out.
+John Erling Blad left group chat.
+	
+me	9:35 AM
+camera quality terrible sorry
+John Erling Blad joined group chat.
+
+
+
+
+
