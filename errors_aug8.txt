@@ -1,0 +1,86 @@
+daemon.c: In function ‘client_socket_init’:
+daemon.c:343:114: warning: pointer type mismatch in conditional expression [enabled by default]
+             inet_ntop(rp->ai_family, rp->ai_family == AF_INET ? &(((struct sockaddr_in *)rp->ai_addr)->sin_addr) : 
+                                                                                                                  ^
+mv -f .deps/daemon.Tpo .deps/daemon.Po
+gcc -std=gnu99 -DHAVE_CONFIG_H -I.  -I/usr/include/freetype2 -pthread -I/usr/include  -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12   -I/usr/include/cairomm-1.0 -I/usr/lib/x86_64-linux-gnu/cairomm-1.0/include -I/usr/include/cairo -I/usr/include/sigc++-2.0 -I/usr/lib/x86_64-linux-gnu/sigc++-2.0/include -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12     -g -O2 -MT daemon_compat.o -MD -MP -MF .deps/daemon_compat.Tpo -c -o daemon_compat.o daemon_compat.c
+mv -f .deps/daemon_compat.Tpo .deps/daemon_compat.Po
+g++ -DHAVE_CONFIG_H -I.  -I/usr/include/freetype2 -pthread -I/usr/include  -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12   -I/usr/include/cairomm-1.0 -I/usr/lib/x86_64-linux-gnu/cairomm-1.0/include -I/usr/include/cairo -I/usr/include/sigc++-2.0 -I/usr/lib/x86_64-linux-gnu/sigc++-2.0/include -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12     -g -O2 -MT gen_tile.o -MD -MP -MF .deps/gen_tile.Tpo -c -o gen_tile.o gen_tile.cpp
+mv -f .deps/gen_tile.Tpo .deps/gen_tile.Po
+gcc -std=gnu99 -DHAVE_CONFIG_H -I.  -I/usr/include/freetype2 -pthread -I/usr/include  -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12   -I/usr/include/cairomm-1.0 -I/usr/lib/x86_64-linux-gnu/cairomm-1.0/include -I/usr/include/cairo -I/usr/include/sigc++-2.0 -I/usr/lib/x86_64-linux-gnu/sigc++-2.0/include -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12     -g -O2 -MT sys_utils.o -MD -MP -MF .deps/sys_utils.Tpo -c -o sys_utils.o sys_utils.c
+mv -f .deps/sys_utils.Tpo .deps/sys_utils.Po
+gcc -std=gnu99 -DHAVE_CONFIG_H -I.  -I/usr/include/freetype2 -pthread -I/usr/include  -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12   -I/usr/include/cairomm-1.0 -I/usr/lib/x86_64-linux-gnu/cairomm-1.0/include -I/usr/include/cairo -I/usr/include/sigc++-2.0 -I/usr/lib/x86_64-linux-gnu/sigc++-2.0/include -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12     -g -O2 -MT request_queue.o -MD -MP -MF .deps/request_queue.Tpo -c -o request_queue.o request_queue.c
+mv -f .deps/request_queue.Tpo .deps/request_queue.Po
+gcc -std=gnu99 -DHAVE_CONFIG_H -I.  -I/usr/include/freetype2 -pthread -I/usr/include  -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12   -I/usr/include/cairomm-1.0 -I/usr/lib/x86_64-linux-gnu/cairomm-1.0/include -I/usr/include/cairo -I/usr/include/sigc++-2.0 -I/usr/lib/x86_64-linux-gnu/sigc++-2.0/include -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12     -g -O2 -MT cache_expire.o -MD -MP -MF .deps/cache_expire.Tpo -c -o cache_expire.o cache_expire.c
+mv -f .deps/cache_expire.Tpo .deps/cache_expire.Po
+g++ -DHAVE_CONFIG_H -I.  -I/usr/include/freetype2 -pthread -I/usr/include  -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12   -I/usr/include/cairomm-1.0 -I/usr/lib/x86_64-linux-gnu/cairomm-1.0/include -I/usr/include/cairo -I/usr/include/sigc++-2.0 -I/usr/lib/x86_64-linux-gnu/sigc++-2.0/include -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12     -g -O2 -MT metatile.o -MD -MP -MF .deps/metatile.Tpo -c -o metatile.o metatile.cpp
+mv -f .deps/metatile.Tpo .deps/metatile.Po
+gcc -std=gnu99 -DHAVE_CONFIG_H -I.  -I/usr/include/freetype2 -pthread -I/usr/include  -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12   -I/usr/include/cairomm-1.0 -I/usr/lib/x86_64-linux-gnu/cairomm-1.0/include -I/usr/include/cairo -I/usr/include/sigc++-2.0 -I/usr/lib/x86_64-linux-gnu/sigc++-2.0/include -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12     -g -O2 -MT store.o -MD -MP -MF .deps/store.Tpo -c -o store.o store.c
+mv -f .deps/store.Tpo .deps/store.Po
+gcc -std=gnu99 -DHAVE_CONFIG_H -I.  -I/usr/include/freetype2 -pthread -I/usr/include  -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12   -I/usr/include/cairomm-1.0 -I/usr/lib/x86_64-linux-gnu/cairomm-1.0/include -I/usr/include/cairo -I/usr/include/sigc++-2.0 -I/usr/lib/x86_64-linux-gnu/sigc++-2.0/include -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12     -g -O2 -MT store_file.o -MD -MP -MF .deps/store_file.Tpo -c -o store_file.o store_file.c
+store_file.c: In function ‘file_tile_read’:
+store_file.c:55:5: warning: passing argument 5 of ‘xyz_to_meta’ makes integer from pointer without a cast [enabled by default]
+     meta_offset = xyz_to_meta(path, sizeof(path), store->storage_ctx, xmlconfig, t, x, y, z);
+     ^
+In file included from store_file.c:25:0:
+store_file_utils.h:29:5: note: expected ‘int’ but argument is of type ‘char *’
+ int xyz_to_meta(char *path, size_t len, const char *tile_dir, const char *xmlconfig, int x, int y, int z);
+     ^
+store_file.c:55:5: error: too many arguments to function ‘xyz_to_meta’
+     meta_offset = xyz_to_meta(path, sizeof(path), store->storage_ctx, xmlconfig, t, x, y, z);
+     ^
+In file included from store_file.c:25:0:
+store_file_utils.h:29:5: note: declared here
+ int xyz_to_meta(char *path, size_t len, const char *tile_dir, const char *xmlconfig, int x, int y, int z);
+     ^
+store_file.c: In function ‘file_tile_stat’:
+store_file.c:145:5: warning: passing argument 5 of ‘xyz_to_meta’ makes integer from pointer without a cast [enabled by default]
+     xyz_to_meta(meta_path, sizeof(meta_path), (char *)(store->storage_ctx), xmlconfig, t, x, y, z);
+     ^
+In file included from store_file.c:25:0:
+store_file_utils.h:29:5: note: expected ‘int’ but argument is of type ‘char *’
+ int xyz_to_meta(char *path, size_t len, const char *tile_dir, const char *xmlconfig, int x, int y, int z);
+     ^
+store_file.c:145:5: error: too many arguments to function ‘xyz_to_meta’
+     xyz_to_meta(meta_path, sizeof(meta_path), (char *)(store->storage_ctx), xmlconfig, t, x, y, z);
+     ^
+In file included from store_file.c:25:0:
+store_file_utils.h:29:5: note: declared here
+ int xyz_to_meta(char *path, size_t len, const char *tile_dir, const char *xmlconfig, int x, int y, int z);
+     ^
+store_file.c: In function ‘file_metatile_expire’:
+store_file.c:232:5: warning: passing argument 5 of ‘xyz_to_meta’ makes integer from pointer without a cast [enabled by default]
+     xyz_to_meta(name, sizeof(name), store->storage_ctx, xmlconfig, t, x, y, z);
+     ^
+In file included from store_file.c:25:0:
+store_file_utils.h:29:5: note: expected ‘int’ but argument is of type ‘char *’
+ int xyz_to_meta(char *path, size_t len, const char *tile_dir, const char *xmlconfig, int x, int y, int z);
+     ^
+store_file.c:232:5: error: too many arguments to function ‘xyz_to_meta’
+     xyz_to_meta(name, sizeof(name), store->storage_ctx, xmlconfig, t, x, y, z);
+     ^
+In file included from store_file.c:25:0:
+store_file_utils.h:29:5: note: declared here
+ int xyz_to_meta(char *path, size_t len, const char *tile_dir, const char *xmlconfig, int x, int y, int z);
+     ^
+store_file.c: In function ‘init_storage_file’:
+store_file.c:272:22: warning: assignment from incompatible pointer type [enabled by default]
+     store->tile_read = &file_tile_read;
+                      ^
+store_file.c:273:22: warning: assignment from incompatible pointer type [enabled by default]
+     store->tile_stat = &file_tile_stat;
+                      ^
+store_file.c:274:27: warning: assignment from incompatible pointer type [enabled by default]
+     store->metatile_write = &file_metatile_write;
+                           ^
+store_file.c:276:28: warning: assignment from incompatible pointer type [enabled by default]
+     store->metatile_expire = &file_metatile_expire;
+                            ^
+store_file.c:277:28: warning: assignment from incompatible pointer type [enabled by default]
+     store->tile_storage_id = &file_tile_storage_id;
+                            ^
+make[2]: *** [store_file.o] Error 1
+make[2]: Leaving directory `/home/jaimelyn/projects/ohm_mod_tile'
+make[1]: *** [all-recursive] Error 1
+make[1]: Leaving directory `/home/jaimelyn/projects/ohm_mod_tile'
+make: *** [all] Error 2
