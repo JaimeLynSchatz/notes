@@ -1,0 +1,10 @@
+make  all-recursive
+make[1]: Entering directory `/home/jaimelyn/projects/ohm_mod_tile'
+Making all in iniparser3.0b
+make[2]: Entering directory `/home/jaimelyn/projects/ohm_mod_tile/iniparser3.0b'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/jaimelyn/projects/ohm_mod_tile/iniparser3.0b'
+make[2]: Entering directory `/home/jaimelyn/projects/ohm_mod_tile'
+gcc -std=gnu99 -DHAVE_CONFIG_H -I.  -I/usr/include/freetype2 -pthread -I/usr/include  -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12   -I/usr/include/cairomm-1.0 -I/usr/lib/x86_64-linux-gnu/cairomm-1.0/include -I/usr/include/cairo -I/usr/include/sigc++-2.0 -I/usr/lib/x86_64-linux-gnu/sigc++-2.0/include -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12     -g -O2 -MT store_file.o -MD -MP -MF .deps/store_file.Tpo -c -o store_file.o store_file.c
+make[2]: Leaving directory `/home/jaimelyn/projects/ohm_mod_tile'
+make[1]: Leaving directory `/home/jaimelyn/projects/ohm_mod_tile'
