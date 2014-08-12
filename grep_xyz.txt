@@ -1,0 +1,57 @@
+FIXED     gen_tile.cpp:243:    xyz_to_path(filename, sizeof(filename), tile_dir, xmlname, x, y, z);
+
+No fix needed for metatile **offsets** (?? confirm)
+metatile.cpp:56:int metaTile::xyz_to_meta_offset(int x, int y, int z) {
+metatile.cpp:87:            int mt = xyz_to_meta_offset(x_ + ox, y_ + oy, z_);
+metatile.cpp:102:            memcpy(metatilebuffer + offsets[xyz_to_meta_offset(x_ + ox, y_ + oy, z_)].offset, (const void *)tile[ox][oy].data(), tile[ox][oy].size());
+metatile.h:40:    int xyz_to_meta_offset(int x, int y, int z);
+
+FIXED     renderd.py:323:    def xyz_to_meta(self, xmlname, x,y, z):
+NO_FIX   renderd.py:337:    def xyz_to_meta_offset(self, xmlname, x,y, z):
+FIXED     renderd.py:345:        meta_path = self.xyz_to_meta(xmlname, x, y, z)
+NO_FIX   renderd.py:368:                mt = self.xyz_to_meta_offset(xmlname, x+xx, y+yy, z)
+
+
+FIXED
+store_file.c:55:    meta_offset = xyz_to_meta(path, sizeof(path), store->storage_ctx, xmlconfig, t, x, y, z);
+store_file.c:96:    // Currently this code only works with fixed metatile sizes (due to xyz_to_meta above)
+store_file.c:145:    xyz_to_meta(meta_path, sizeof(meta_path), (char *)(store->storage_ctx), xmlconfig, t, x, y, z);
+store_file.c:171:    xyz_to_meta(meta_path, sizeof(meta_path), (char *)(store->storage_ctx), xmlconfig, x, y, z);
+store_file.c:183:    xyz_to_meta(meta_path, sizeof(meta_path), (char *)(store->storage_ctx), xmlconfig, x, y, z);
+store_file.c:220:    xyz_to_meta(meta_path, sizeof(meta_path), (char *)(store->storage_ctx), xmlconfig, x, y, z);
+store_file.c:232:    xyz_to_meta(name, sizeof(name), store->storage_ctx, xmlconfig, t, x, y, z);
+
+FIXED
+store_file_utils.c:85:void xyz_to_path(char *path, size_t len, const char *tile_dir, const char *xmlconfig, int x, int y, int z)
+store_file_utils.c:151:int xyz_to_meta(char *path, size_t len, const char *tile_dir, const char *xmlconfig, int x, int y, int z)
+store_file_utils.h:22:void xyz_to_path(char *path, size_t len, const char *tile_dir, const char *xmlconfig, int x, int y, int z);
+store_file_utils.h:29:int xyz_to_meta(char *path, size_t len, const char *tile_dir, const char *xmlconfig, int x, int y, int z);
+
+FIXED
+store_memcached.c:29:static char * memcached_xyz_to_storagekey(const char *xmlconfig, int x, int y, int z, char * key) {
+store_memcached.c:57:    memcached_xyz_to_storagekey(xmlconfig, x, y, z, meta_path);
+
+NO FIX store_memcached.c:77:    // Currently this code only works with fixed metatile sizes (due to xyz_to_meta above)
+
+FIXED
+store_memcached.c:114:    memcached_xyz_to_storagekey(xmlconfig, x, y, z, meta_path);
+store_memcached.c:183:    memcached_xyz_to_storagekey(xmlconfig, x, y, z, meta_path);
+store_memcached.c:203:    memcached_xyz_to_storagekey(xmlconfig, x, y, z, meta_path);
+
+FIXED
+store_rados.c:48:static char * rados_xyz_to_storagekey(const char *xmlconfig, int x, int y, int z, char * key) {
+store_rados.c:76:        rados_xyz_to_storagekey(xmlconfig, x, y, z, meta_path);
+store_rados.c:113:    rados_xyz_to_storagekey(xmlconfig, x, y, z, meta_path);
+
+NO FIX  store_rados.c:134:    // Currently this code only works with fixed metatile sizes (due to xyz_to_meta above)
+
+FIXED
+store_rados.c:191:    rados_xyz_to_storagekey(xmlconfig, x, y, z, meta_path);
+store_rados.c:213:    rados_xyz_to_storagekey(xmlconfig, x, y, z, meta_path);
+store_rados.c:234:    rados_xyz_to_storagekey(xmlconfig, x, y, z, meta_path);
+store_rados.c:254:    rados_xyz_to_storagekey(xmlconfig, x, y, z, meta_path);
+
+FIXED
+store_ro_http_proxy.c:61:static char * ro_http_proxy_xyz_to_storagekey(struct storage_backend * store, int x, int y, int z, char * key) {
+store_ro_http_proxy.c:83:        ro_http_proxy_xyz_to_storagekey(store, x, y, z, path);
+store_ro_http_proxy.c:167:    return ro_http_proxy_xyz_to_storagekey(store, x, y, z, string);
