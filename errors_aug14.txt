@@ -1,0 +1,123 @@
+Error log from running make on Aug 14
+
+make  all-recursive
+make[1]: Entering directory `/home/jaimelyn/projects/ohm_mod_tile'
+Making all in iniparser3.0b
+make[2]: Entering directory `/home/jaimelyn/projects/ohm_mod_tile/iniparser3.0b'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/jaimelyn/projects/ohm_mod_tile/iniparser3.0b'
+make[2]: Entering directory `/home/jaimelyn/projects/ohm_mod_tile'
+gcc -std=gnu99 -DHAVE_CONFIG_H -I.  -I/usr/include/freetype2 -pthread -I/usr/include  -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12   -I/usr/include/cairomm-1.0 -I/usr/lib/x86_64-linux-gnu/cairomm-1.0/include -I/usr/include/cairo -I/usr/include/sigc++-2.0 -I/usr/lib/x86_64-linux-gnu/sigc++-2.0/include -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12     -g -O2 -MT daemon.o -MD -MP -MF .deps/daemon.Tpo -c -o daemon.o daemon.c
+daemon.c: In function ‘client_socket_init’:
+daemon.c:343:114: warning: pointer type mismatch in conditional expression [enabled by default]
+             inet_ntop(rp->ai_family, rp->ai_family == AF_INET ? &(((struct sockaddr_in *)rp->ai_addr)->sin_addr) : 
+                                                                                                                  ^
+mv -f .deps/daemon.Tpo .deps/daemon.Po
+gcc -std=gnu99 -DHAVE_CONFIG_H -I.  -I/usr/include/freetype2 -pthread -I/usr/include  -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12   -I/usr/include/cairomm-1.0 -I/usr/lib/x86_64-linux-gnu/cairomm-1.0/include -I/usr/include/cairo -I/usr/include/sigc++-2.0 -I/usr/lib/x86_64-linux-gnu/sigc++-2.0/include -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12     -g -O2 -MT daemon_compat.o -MD -MP -MF .deps/daemon_compat.Tpo -c -o daemon_compat.o daemon_compat.c
+mv -f .deps/daemon_compat.Tpo .deps/daemon_compat.Po
+g++ -DHAVE_CONFIG_H -I.  -I/usr/include/freetype2 -pthread -I/usr/include  -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12   -I/usr/include/cairomm-1.0 -I/usr/lib/x86_64-linux-gnu/cairomm-1.0/include -I/usr/include/cairo -I/usr/include/sigc++-2.0 -I/usr/lib/x86_64-linux-gnu/sigc++-2.0/include -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12     -g -O2 -MT gen_tile.o -MD -MP -MF .deps/gen_tile.Tpo -c -o gen_tile.o gen_tile.cpp
+mv -f .deps/gen_tile.Tpo .deps/gen_tile.Po
+gcc -std=gnu99 -DHAVE_CONFIG_H -I.  -I/usr/include/freetype2 -pthread -I/usr/include  -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12   -I/usr/include/cairomm-1.0 -I/usr/lib/x86_64-linux-gnu/cairomm-1.0/include -I/usr/include/cairo -I/usr/include/sigc++-2.0 -I/usr/lib/x86_64-linux-gnu/sigc++-2.0/include -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12     -g -O2 -MT sys_utils.o -MD -MP -MF .deps/sys_utils.Tpo -c -o sys_utils.o sys_utils.c
+mv -f .deps/sys_utils.Tpo .deps/sys_utils.Po
+gcc -std=gnu99 -DHAVE_CONFIG_H -I.  -I/usr/include/freetype2 -pthread -I/usr/include  -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12   -I/usr/include/cairomm-1.0 -I/usr/lib/x86_64-linux-gnu/cairomm-1.0/include -I/usr/include/cairo -I/usr/include/sigc++-2.0 -I/usr/lib/x86_64-linux-gnu/sigc++-2.0/include -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12     -g -O2 -MT request_queue.o -MD -MP -MF .deps/request_queue.Tpo -c -o request_queue.o request_queue.c
+mv -f .deps/request_queue.Tpo .deps/request_queue.Po
+gcc -std=gnu99 -DHAVE_CONFIG_H -I.  -I/usr/include/freetype2 -pthread -I/usr/include  -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12   -I/usr/include/cairomm-1.0 -I/usr/lib/x86_64-linux-gnu/cairomm-1.0/include -I/usr/include/cairo -I/usr/include/sigc++-2.0 -I/usr/lib/x86_64-linux-gnu/sigc++-2.0/include -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12     -g -O2 -MT cache_expire.o -MD -MP -MF .deps/cache_expire.Tpo -c -o cache_expire.o cache_expire.c
+mv -f .deps/cache_expire.Tpo .deps/cache_expire.Po
+g++ -DHAVE_CONFIG_H -I.  -I/usr/include/freetype2 -pthread -I/usr/include  -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12   -I/usr/include/cairomm-1.0 -I/usr/lib/x86_64-linux-gnu/cairomm-1.0/include -I/usr/include/cairo -I/usr/include/sigc++-2.0 -I/usr/lib/x86_64-linux-gnu/sigc++-2.0/include -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12     -g -O2 -MT metatile.o -MD -MP -MF .deps/metatile.Tpo -c -o metatile.o metatile.cpp
+mv -f .deps/metatile.Tpo .deps/metatile.Po
+gcc -std=gnu99 -DHAVE_CONFIG_H -I.  -I/usr/include/freetype2 -pthread -I/usr/include  -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12   -I/usr/include/cairomm-1.0 -I/usr/lib/x86_64-linux-gnu/cairomm-1.0/include -I/usr/include/cairo -I/usr/include/sigc++-2.0 -I/usr/lib/x86_64-linux-gnu/sigc++-2.0/include -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12     -g -O2 -MT store.o -MD -MP -MF .deps/store.Tpo -c -o store.o store.c
+mv -f .deps/store.Tpo .deps/store.Po
+gcc -std=gnu99 -DHAVE_CONFIG_H -I.  -I/usr/include/freetype2 -pthread -I/usr/include  -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12   -I/usr/include/cairomm-1.0 -I/usr/lib/x86_64-linux-gnu/cairomm-1.0/include -I/usr/include/cairo -I/usr/include/sigc++-2.0 -I/usr/lib/x86_64-linux-gnu/sigc++-2.0/include -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12     -g -O2 -MT store_file.o -MD -MP -MF .deps/store_file.Tpo -c -o store_file.o store_file.c
+store_file.c: In function ‘init_storage_file’:
+store_file.c:272:22: warning: assignment from incompatible pointer type [enabled by default]
+     store->tile_read = &file_tile_read;
+                      ^
+store_file.c:273:22: warning: assignment from incompatible pointer type [enabled by default]
+     store->tile_stat = &file_tile_stat;
+                      ^
+store_file.c:274:27: warning: assignment from incompatible pointer type [enabled by default]
+     store->metatile_write = &file_metatile_write;
+                           ^
+store_file.c:275:28: warning: assignment from incompatible pointer type [enabled by default]
+     store->metatile_delete = &file_metatile_delete;
+                            ^
+store_file.c:276:28: warning: assignment from incompatible pointer type [enabled by default]
+     store->metatile_expire = &file_metatile_expire;
+                            ^
+store_file.c:277:28: warning: assignment from incompatible pointer type [enabled by default]
+     store->tile_storage_id = &file_tile_storage_id;
+                            ^
+mv -f .deps/store_file.Tpo .deps/store_file.Po
+gcc -std=gnu99 -DHAVE_CONFIG_H -I.  -I/usr/include/freetype2 -pthread -I/usr/include  -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12   -I/usr/include/cairomm-1.0 -I/usr/lib/x86_64-linux-gnu/cairomm-1.0/include -I/usr/include/cairo -I/usr/include/sigc++-2.0 -I/usr/lib/x86_64-linux-gnu/sigc++-2.0/include -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12     -g -O2 -MT store_file_utils.o -MD -MP -MF .deps/store_file_utils.Tpo -c -o store_file_utils.o store_file_utils.c
+mv -f .deps/store_file_utils.Tpo .deps/store_file_utils.Po
+gcc -std=gnu99 -DHAVE_CONFIG_H -I.  -I/usr/include/freetype2 -pthread -I/usr/include  -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12   -I/usr/include/cairomm-1.0 -I/usr/lib/x86_64-linux-gnu/cairomm-1.0/include -I/usr/include/cairo -I/usr/include/sigc++-2.0 -I/usr/lib/x86_64-linux-gnu/sigc++-2.0/include -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12     -g -O2 -MT store_memcached.o -MD -MP -MF .deps/store_memcached.Tpo -c -o store_memcached.o store_memcached.c
+mv -f .deps/store_memcached.Tpo .deps/store_memcached.Po
+gcc -std=gnu99 -DHAVE_CONFIG_H -I.  -I/usr/include/freetype2 -pthread -I/usr/include  -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12   -I/usr/include/cairomm-1.0 -I/usr/lib/x86_64-linux-gnu/cairomm-1.0/include -I/usr/include/cairo -I/usr/include/sigc++-2.0 -I/usr/lib/x86_64-linux-gnu/sigc++-2.0/include -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12     -g -O2 -MT store_rados.o -MD -MP -MF .deps/store_rados.Tpo -c -o store_rados.o store_rados.c
+mv -f .deps/store_rados.Tpo .deps/store_rados.Po
+gcc -std=gnu99 -DHAVE_CONFIG_H -I.  -I/usr/include/freetype2 -pthread -I/usr/include  -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12   -I/usr/include/cairomm-1.0 -I/usr/lib/x86_64-linux-gnu/cairomm-1.0/include -I/usr/include/cairo -I/usr/include/sigc++-2.0 -I/usr/lib/x86_64-linux-gnu/sigc++-2.0/include -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12     -g -O2 -MT store_ro_http_proxy.o -MD -MP -MF .deps/store_ro_http_proxy.Tpo -c -o store_ro_http_proxy.o store_ro_http_proxy.c
+store_ro_http_proxy.c: In function ‘ro_http_proxy_close_storage’:
+store_ro_http_proxy.c:192:5: warning: passing argument 1 of ‘free’ discards ‘const’ qualifier from pointer target type [enabled by default]
+     free(ctx->baseurl);
+     ^
+In file included from store_ro_http_proxy.c:3:0:
+/usr/include/stdlib.h:488:13: note: expected ‘void *’ but argument is of type ‘const char *’
+ extern void free (void *__ptr) __THROW;
+             ^
+store_ro_http_proxy.c: In function ‘init_storage_ro_http_proxy’:
+store_ro_http_proxy.c:259:22: warning: assignment from incompatible pointer type [enabled by default]
+     store->tile_read = &ro_http_proxy_tile_read;
+                      ^
+store_ro_http_proxy.c:260:22: warning: assignment from incompatible pointer type [enabled by default]
+     store->tile_stat = &ro_http_proxy_tile_stat;
+                      ^
+store_ro_http_proxy.c:261:27: warning: assignment from incompatible pointer type [enabled by default]
+     store->metatile_write = &ro_http_proxy_metatile_write;
+                           ^
+store_ro_http_proxy.c:262:28: warning: assignment from incompatible pointer type [enabled by default]
+     store->metatile_delete = &ro_http_proxy_metatile_delete;
+                            ^
+store_ro_http_proxy.c:263:28: warning: assignment from incompatible pointer type [enabled by default]
+     store->metatile_expire = &ro_http_proxy_metatile_expire;
+                            ^
+store_ro_http_proxy.c:264:28: warning: assignment from incompatible pointer type [enabled by default]
+     store->tile_storage_id = &ro_http_proxy_tile_storage_id;
+                            ^
+mv -f .deps/store_ro_http_proxy.Tpo .deps/store_ro_http_proxy.Po
+gcc -std=gnu99 -DHAVE_CONFIG_H -I.  -I/usr/include/freetype2 -pthread -I/usr/include  -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12   -I/usr/include/cairomm-1.0 -I/usr/lib/x86_64-linux-gnu/cairomm-1.0/include -I/usr/include/cairo -I/usr/include/sigc++-2.0 -I/usr/lib/x86_64-linux-gnu/sigc++-2.0/include -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12     -g -O2 -MT store_ro_composite.o -MD -MP -MF .deps/store_ro_composite.Tpo -c -o store_ro_composite.o store_ro_composite.c
+mv -f .deps/store_ro_composite.Tpo .deps/store_ro_composite.Po
+gcc -std=gnu99 -DHAVE_CONFIG_H -I.  -I/usr/include/freetype2 -pthread -I/usr/include  -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12   -I/usr/include/cairomm-1.0 -I/usr/lib/x86_64-linux-gnu/cairomm-1.0/include -I/usr/include/cairo -I/usr/include/sigc++-2.0 -I/usr/lib/x86_64-linux-gnu/sigc++-2.0/include -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12     -g -O2 -MT store_null.o -MD -MP -MF .deps/store_null.Tpo -c -o store_null.o store_null.c
+mv -f .deps/store_null.Tpo .deps/store_null.Po
+/bin/bash ./libtool --tag=CXX   --mode=link g++  -g -O2   -o renderd daemon.o daemon_compat.o gen_tile.o sys_utils.o request_queue.o cache_expire.o metatile.o store.o store_file.o store_file_utils.o store_memcached.o store_rados.o store_ro_http_proxy.o store_ro_composite.o store_null.o -L/usr/lib/x86_64-linux-gnu -lfreetype -lz -pthread -L/usr/lib -lmapnik -L/usr/lib    -L/usr/lib/x86_64-linux-gnu -lcurl -Wl,-Bsymbolic-functions -Wl,-z,relro -lcairo   -Liniparser3.0b/.libs -liniparser -lm 
+libtool: link: g++ -g -O2 -o .libs/renderd daemon.o daemon_compat.o gen_tile.o sys_utils.o request_queue.o cache_expire.o metatile.o store.o store_file.o store_file_utils.o store_memcached.o store_rados.o store_ro_http_proxy.o store_ro_composite.o store_null.o -pthread -Wl,-Bsymbolic-functions -Wl,-z -Wl,relro  -L/usr/lib/x86_64-linux-gnu /usr/lib/x86_64-linux-gnu/libfreetype.so -lz -L/usr/lib -lmapnik /usr/lib/x86_64-linux-gnu/libcurl-gnutls.so /usr/lib/x86_64-linux-gnu/libcairo.so -Liniparser3.0b/.libs /home/jaimelyn/projects/ohm_mod_tile/iniparser3.0b/.libs/libiniparser.so -lm -pthread
+gcc -std=gnu99 -DHAVE_CONFIG_H -I.  -I/usr/include/freetype2 -pthread -I/usr/include  -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12   -I/usr/include/cairomm-1.0 -I/usr/lib/x86_64-linux-gnu/cairomm-1.0/include -I/usr/include/cairo -I/usr/include/sigc++-2.0 -I/usr/lib/x86_64-linux-gnu/sigc++-2.0/include -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12     -g -O2 -MT render_expired.o -MD -MP -MF .deps/render_expired.Tpo -c -o render_expired.o render_expired.c
+render_expired.c: In function ‘main’:
+render_expired.c:345:50: error: ‘t’ undeclared (first use in this function)
+             s = store->tile_stat(store, mapname, t, x, y, z);
+                                                  ^
+render_expired.c:345:50: note: each undeclared identifier is reported only once for each function it appears in
+render_expired.c:345:13: error: too many arguments to function ‘store->tile_stat’
+             s = store->tile_stat(store, mapname, t, x, y, z);
+             ^
+render_expired.c:353:25: warning: passing argument 6 of ‘store->tile_storage_id’ makes pointer from integer without a cast [enabled by default]
+                         printf("deleting: %s\n", store->tile_storage_id(store, mapname, t, x, y, z, name));
+                         ^
+render_expired.c:353:25: note: expected ‘char *’ but argument is of type ‘int’
+render_expired.c:353:25: error: too many arguments to function ‘store->tile_storage_id’
+render_expired.c:360:25: warning: passing argument 6 of ‘store->tile_storage_id’ makes pointer from integer without a cast [enabled by default]
+                         printf("touch: %s\n", store->tile_storage_id(store, mapname, t, x, y, z, name));
+                         ^
+render_expired.c:360:25: note: expected ‘char *’ but argument is of type ‘int’
+render_expired.c:360:25: error: too many arguments to function ‘store->tile_storage_id’
+render_expired.c:361:21: error: too many arguments to function ‘store->metatile_expire’
+                     store->metatile_expire(store, mapname, t, x, y, z);
+                     ^
+render_expired.c:366:21: warning: passing argument 6 of ‘store->tile_storage_id’ makes pointer from integer without a cast [enabled by default]
+                     printf("render: %s\n", store->tile_storage_id(store, mapname, t, x, y, z, name));
+                     ^
+render_expired.c:366:21: note: expected ‘char *’ but argument is of type ‘int’
+render_expired.c:366:21: error: too many arguments to function ‘store->tile_storage_id’
+make[2]: *** [render_expired.o] Error 1
+make[2]: Leaving directory `/home/jaimelyn/projects/ohm_mod_tile'
+make[1]: *** [all-recursive] Error 1
+make[1]: Leaving directory `/home/jaimelyn/projects/ohm_mod_tile'
+make: *** [all] Error 2

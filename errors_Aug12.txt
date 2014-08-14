@@ -1,0 +1,42 @@
+jaimelyn@jaimelyn-Aspire-5742:~/projects/ohm_mod_tile$ make
+make  all-recursive
+make[1]: Entering directory `/home/jaimelyn/projects/ohm_mod_tile'
+Making all in iniparser3.0b
+make[2]: Entering directory `/home/jaimelyn/projects/ohm_mod_tile/iniparser3.0b'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/jaimelyn/projects/ohm_mod_tile/iniparser3.0b'
+make[2]: Entering directory `/home/jaimelyn/projects/ohm_mod_tile'
+gcc -std=gnu99 -DHAVE_CONFIG_H -I.  -I/usr/include/freetype2 -pthread -I/usr/include  -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12   -I/usr/include/cairomm-1.0 -I/usr/lib/x86_64-linux-gnu/cairomm-1.0/include -I/usr/include/cairo -I/usr/include/sigc++-2.0 -I/usr/lib/x86_64-linux-gnu/sigc++-2.0/include -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12     -g -O2 -MT store_file.o -MD -MP -MF .deps/store_file.Tpo -c -o store_file.o store_file.c
+store_file.c: In function ‘init_storage_file’:
+store_file.c:272:22: warning: assignment from incompatible pointer type [enabled by default]
+     store->tile_read = &file_tile_read;
+                      ^
+store_file.c:273:22: warning: assignment from incompatible pointer type [enabled by default]
+     store->tile_stat = &file_tile_stat;
+                      ^
+store_file.c:274:27: warning: assignment from incompatible pointer type [enabled by default]
+     store->metatile_write = &file_metatile_write;
+                           ^
+store_file.c:275:28: warning: assignment from incompatible pointer type [enabled by default]
+     store->metatile_delete = &file_metatile_delete;
+                            ^
+store_file.c:276:28: warning: assignment from incompatible pointer type [enabled by default]
+     store->metatile_expire = &file_metatile_expire;
+                            ^
+store_file.c:277:28: warning: assignment from incompatible pointer type [enabled by default]
+     store->tile_storage_id = &file_tile_storage_id;
+                            ^
+mv -f .deps/store_file.Tpo .deps/store_file.Po
+gcc -std=gnu99 -DHAVE_CONFIG_H -I.  -I/usr/include/freetype2 -pthread -I/usr/include  -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12   -I/usr/include/cairomm-1.0 -I/usr/lib/x86_64-linux-gnu/cairomm-1.0/include -I/usr/include/cairo -I/usr/include/sigc++-2.0 -I/usr/lib/x86_64-linux-gnu/sigc++-2.0/include -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12     -g -O2 -MT store_file_utils.o -MD -MP -MF .deps/store_file_utils.Tpo -c -o store_file_utils.o store_file_utils.c
+store_file_utils.c:105:5: error: conflicting types for ‘path_to_xyz’
+ int path_to_xyz(const char *tilepath, const char *path, char *xmlconfig, int *px, int *py, int *pz)
+     ^
+In file included from store_file_utils.c:12:0:
+store_file_utils.h:24:5: note: previous declaration of ‘path_to_xyz’ was here
+ int path_to_xyz(const char *tilepath, const char *path, char *xmlconfig, char *t, int *px, int *py, int *pz);
+     ^
+make[2]: *** [store_file_utils.o] Error 1
+make[2]: Leaving directory `/home/jaimelyn/projects/ohm_mod_tile'
+make[1]: *** [all-recursive] Error 1
+make[1]: Leaving directory `/home/jaimelyn/projects/ohm_mod_tile'
+make: *** [all] Error 2
