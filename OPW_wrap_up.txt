@@ -1,0 +1,14 @@
+My original OPW proposal page:
+https://www.mediawiki.org/wiki/Historical_OpenStreetMap
+
+The overall OHM project page: http://wiki.openstreetmap.org/wiki/Open_Historical_Map
+
+An example of how we used the issue tracker on GitHub:
+https://github.com/OpenHistoricalMap/ohm-website/issues/15
+
+The codebase is quite complex. It is actually three separate codebases, written in several languages: Javascript, Ruby, C, C++ and Python (with a healthy serving of Bash scripts for interpreting map paths!) I was able to integrate a minimum viable slider into the website and have modified the renderer to accept time as a parameter.
+
+There's still so much more to do. Three months was simply not enough time for me to accomplish all that I wanted to on this project. I plan to keep contributing. 
+
+The project can use more contributors! The team lead Susannaanas (https://meta.wikimedia.org/wiki/Grants:IdeaLab/Build/Make_an_editing_interface_for_the_Map_template) has started a page in the Idea Labs for one piece of the project: https://meta.wikimedia.org/wiki/Grants:IdeaLab/Build/Make_an_editing_interface_for_the_Map_template 
+
