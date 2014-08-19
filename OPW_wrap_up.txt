@@ -1,14 +1,16 @@
+The overall OHM project page: http://wiki.openstreetmap.org/wiki/
+Open_Historical_Map The goal of the project was, essentially, to put a time slider on a fork of the Open Street Map to enable users to search for historical maps that have been loaded into the system.
+
 My original OPW proposal page:
 https://www.mediawiki.org/wiki/Historical_OpenStreetMap
-
-The overall OHM project page: http://wiki.openstreetmap.org/wiki/Open_Historical_Map
+My logs:
+https://www.mediawiki.org/wiki/User:JaimeLyn/Weekly_Reports
 
 An example of how we used the issue tracker on GitHub:
 https://github.com/OpenHistoricalMap/ohm-website/issues/15
 
-The codebase is quite complex. It is actually three separate codebases, written in several languages: Javascript, Ruby, C, C++ and Python (with a healthy serving of Bash scripts for interpreting map paths!) I was able to integrate a minimum viable slider into the website and have modified the renderer to accept time as a parameter.
+The codebase is quite complex. It is actually three separate codebases, written in several languages: Javascript, Ruby, C, C++ and Python (with a healthy serving of Bash scripts for interpreting map paths!) I was able to integrate a minimum viable slider into the website, have it feed the year portion of the query through and up to the server. I've also modified the renderer to accept time as a parameter. A big stumbling block (besides not knowing C/C++ and spending some internship time studying the language !!) has been the difficulty in keeping the renderer backwards-compatible with non-time queries, but I'm still working on it! 
 
-There's still so much more to do. Three months was simply not enough time for me to accomplish all that I wanted to on this project. I plan to keep contributing. 
+There's still so much more to do. Three months was simply not enough time for me to complete the entire project. I plan to keep contributing.
 
-The project can use more contributors! The team lead Susannaanas (https://meta.wikimedia.org/wiki/Grants:IdeaLab/Build/Make_an_editing_interface_for_the_Map_template) has started a page in the Idea Labs for one piece of the project: https://meta.wikimedia.org/wiki/Grants:IdeaLab/Build/Make_an_editing_interface_for_the_Map_template 
-
+The project can use more contributors! The team lead Susannaanas (https://meta.wikimedia.org/wiki/Grants:IdeaLab/Build/Make_an_editing_interface_for_the_Map_template) has started a page in the Idea Labs for one piece of the project: https://meta.wikimedia.org/wiki/Grants:IdeaLab/Build/Make_an_editing_interface_for_the_Map_template
