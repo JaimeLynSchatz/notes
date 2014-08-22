@@ -1,0 +1,27 @@
+make  all-recursive
+make[1]: Entering directory `/home/jaimelyn/projects/ohm_mod_tile'
+Making all in iniparser3.0b
+make[2]: Entering directory `/home/jaimelyn/projects/ohm_mod_tile/iniparser3.0b'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/jaimelyn/projects/ohm_mod_tile/iniparser3.0b'
+make[2]: Entering directory `/home/jaimelyn/projects/ohm_mod_tile'
+gcc -std=gnu99 -DHAVE_CONFIG_H -I.  -I/usr/include/freetype2 -pthread -I/usr/include  -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12   -I/usr/include/cairomm-1.0 -I/usr/lib/x86_64-linux-gnu/cairomm-1.0/include -I/usr/include/cairo -I/usr/include/sigc++-2.0 -I/usr/lib/x86_64-linux-gnu/sigc++-2.0/include -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12     -g -O2 -MT daemon.o -MD -MP -MF .deps/daemon.Tpo -c -o daemon.o daemon.c
+make[2]: Leaving directory `/home/jaimelyn/projects/ohm_mod_tile'
+make[1]: Leaving directory `/home/jaimelyn/projects/ohm_mod_tile'
+
+In file included from gen_tile.h:4:0,
+                 from daemon.h:13,
+                 from daemon.c:23:
+protocol.h:28:5: error: bit-field ‘t’ width not an integer constant
+     char *t : "2014";
+     ^
+protocol.h:28:5: error: bit-field ‘t’ has invalid type
+protocol.h:38:5: error: bit-field ‘t’ width not an integer constant
+     char *t: "2014";
+     ^
+protocol.h:38:5: error: bit-field ‘t’ has invalid type
+daemon.c: In function ‘client_socket_init’:
+daemon.c:343:114: warning: pointer type mismatch in conditional expression [enabled by default]
+             inet_ntop(rp->ai_family, rp->ai_family == AF_INET ? &(((struct sockaddr_in *)rp->ai_addr)->sin_addr) : 
+                                                                                                                  ^
+
