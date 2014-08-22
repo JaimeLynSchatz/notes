@@ -1,0 +1,48 @@
+jaimelyn@jaimelyn-Aspire-5742:~/projects/ohm_mod_tile$ make
+make  all-recursive
+make[1]: Entering directory `/home/jaimelyn/projects/ohm_mod_tile'
+Making all in iniparser3.0b
+make[2]: Entering directory `/home/jaimelyn/projects/ohm_mod_tile/iniparser3.0b'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/jaimelyn/projects/ohm_mod_tile/iniparser3.0b'
+make[2]: Entering directory `/home/jaimelyn/projects/ohm_mod_tile'
+apxs2 -c      -L/usr/lib/x86_64-linux-gnu -lcurl -Wl,-Bsymbolic-functions -Wl,-z,relro -lcairo   ./mod_tile.c  ./sys_utils.c ./store.c ./store_file.c ./store_file_utils.c ./store_memcached.c ./store_rados.c ./store_ro_http_proxy.c ./store_ro_composite.c ./store_null.c
+/usr/share/apr-1.0/build/libtool --silent --mode=compile --tag=disable-static x86_64-linux-gnu-gcc -prefer-pic -DLINUX=2 -D_FORTIFY_SOURCE=2 -D_GNU_SOURCE -D_REENTRANT -I/usr/include/apr-1.0 -I/usr/include/openssl -I/usr/include/xmltok -pthread     -I/usr/include/apache2  -I/usr/include/apr-1.0   -I/usr/include/apr-1.0   -c -o ./mod_tile.lo ./mod_tile.c && touch ./mod_tile.slo
+./mod_tile.c: In function 'socket_init':
+./mod_tile.c:142:114: warning: pointer type mismatch in conditional expression [enabled by default]
+./mod_tile.c: In function 'tile_state':
+./mod_tile.c:352:23: warning: format '%i' expects argument of type 'int', but argument 8 has type 'char *' [-Wformat]
+./mod_tile.c:352:23: warning: format '%p' expects argument of type 'void *', but argument 11 has type 'int' [-Wformat]
+./mod_tile.c:352:23: warning: format '%li' expects argument of type 'long int', but argument 12 has type 'struct storage_backend *' [-Wformat]
+./mod_tile.c:352:23: warning: format '%i' expects argument of type 'int', but argument 13 has type 'off_t' [-Wformat]
+./mod_tile.c:352:23: warning: format '%li' expects argument of type 'long int', but argument 14 has type 'int' [-Wformat]
+./mod_tile.c: In function 'delay_allowed':
+./mod_tile.c:681:13: warning: passing argument 1 of 'apr_strtok' discards 'const' qualifier from pointer target type [enabled by default]
+/usr/include/apr-1.0/apr_strings.h:233:21: note: expected 'char *' but argument is of type 'const char *'
+./mod_tile.c: In function 'tile_translate':
+./mod_tile.c:1272:13: warning: format '%s' expects argument of type 'char *', but argument 3 has type 'char (*)[5]' [-Wformat]
+/usr/share/apr-1.0/build/libtool --silent --mode=compile --tag=disable-static x86_64-linux-gnu-gcc -prefer-pic -DLINUX=2 -D_FORTIFY_SOURCE=2 -D_GNU_SOURCE -D_REENTRANT -I/usr/include/apr-1.0 -I/usr/include/openssl -I/usr/include/xmltok -pthread     -I/usr/include/apache2  -I/usr/include/apr-1.0   -I/usr/include/apr-1.0   -c -o ./sys_utils.lo ./sys_utils.c && touch ./sys_utils.slo
+/usr/share/apr-1.0/build/libtool --silent --mode=compile --tag=disable-static x86_64-linux-gnu-gcc -prefer-pic -DLINUX=2 -D_FORTIFY_SOURCE=2 -D_GNU_SOURCE -D_REENTRANT -I/usr/include/apr-1.0 -I/usr/include/openssl -I/usr/include/xmltok -pthread     -I/usr/include/apache2  -I/usr/include/apr-1.0   -I/usr/include/apr-1.0   -c -o ./store.lo ./store.c && touch ./store.slo
+/usr/share/apr-1.0/build/libtool --silent --mode=compile --tag=disable-static x86_64-linux-gnu-gcc -prefer-pic -DLINUX=2 -D_FORTIFY_SOURCE=2 -D_GNU_SOURCE -D_REENTRANT -I/usr/include/apr-1.0 -I/usr/include/openssl -I/usr/include/xmltok -pthread     -I/usr/include/apache2  -I/usr/include/apr-1.0   -I/usr/include/apr-1.0   -c -o ./store_file.lo ./store_file.c && touch ./store_file.slo
+/usr/share/apr-1.0/build/libtool --silent --mode=compile --tag=disable-static x86_64-linux-gnu-gcc -prefer-pic -DLINUX=2 -D_FORTIFY_SOURCE=2 -D_GNU_SOURCE -D_REENTRANT -I/usr/include/apr-1.0 -I/usr/include/openssl -I/usr/include/xmltok -pthread     -I/usr/include/apache2  -I/usr/include/apr-1.0   -I/usr/include/apr-1.0   -c -o ./store_file_utils.lo ./store_file_utils.c && touch ./store_file_utils.slo
+./store_file_utils.c: In function 'path_to_xyz':
+./store_file_utils.c:116:5: warning: format '%d' expects argument of type 'int *', but argument 4 has type 'char *' [-Wformat]
+./store_file_utils.c:116:5: warning: format '%s' expects argument of type 'char *', but argument 5 has type 'int *' [-Wformat]
+/usr/share/apr-1.0/build/libtool --silent --mode=compile --tag=disable-static x86_64-linux-gnu-gcc -prefer-pic -DLINUX=2 -D_FORTIFY_SOURCE=2 -D_GNU_SOURCE -D_REENTRANT -I/usr/include/apr-1.0 -I/usr/include/openssl -I/usr/include/xmltok -pthread     -I/usr/include/apache2  -I/usr/include/apr-1.0   -I/usr/include/apr-1.0   -c -o ./store_memcached.lo ./store_memcached.c && touch ./store_memcached.slo
+/usr/share/apr-1.0/build/libtool --silent --mode=compile --tag=disable-static x86_64-linux-gnu-gcc -prefer-pic -DLINUX=2 -D_FORTIFY_SOURCE=2 -D_GNU_SOURCE -D_REENTRANT -I/usr/include/apr-1.0 -I/usr/include/openssl -I/usr/include/xmltok -pthread     -I/usr/include/apache2  -I/usr/include/apr-1.0   -I/usr/include/apr-1.0   -c -o ./store_rados.lo ./store_rados.c && touch ./store_rados.slo
+/usr/share/apr-1.0/build/libtool --silent --mode=compile --tag=disable-static x86_64-linux-gnu-gcc -prefer-pic -DLINUX=2 -D_FORTIFY_SOURCE=2 -D_GNU_SOURCE -D_REENTRANT -I/usr/include/apr-1.0 -I/usr/include/openssl -I/usr/include/xmltok -pthread     -I/usr/include/apache2  -I/usr/include/apr-1.0   -I/usr/include/apr-1.0   -c -o ./store_ro_http_proxy.lo ./store_ro_http_proxy.c && touch ./store_ro_http_proxy.slo
+./store_ro_http_proxy.c: In function 'ro_http_proxy_close_storage':
+./store_ro_http_proxy.c:192:5: warning: passing argument 1 of 'free' discards 'const' qualifier from pointer target type [enabled by default]
+/usr/include/stdlib.h:488:13: note: expected 'void *' but argument is of type 'const char *'
+/usr/share/apr-1.0/build/libtool --silent --mode=compile --tag=disable-static x86_64-linux-gnu-gcc -prefer-pic -DLINUX=2 -D_FORTIFY_SOURCE=2 -D_GNU_SOURCE -D_REENTRANT -I/usr/include/apr-1.0 -I/usr/include/openssl -I/usr/include/xmltok -pthread     -I/usr/include/apache2  -I/usr/include/apr-1.0   -I/usr/include/apr-1.0   -c -o ./store_ro_composite.lo ./store_ro_composite.c && touch ./store_ro_composite.slo
+/usr/share/apr-1.0/build/libtool --silent --mode=compile --tag=disable-static x86_64-linux-gnu-gcc -prefer-pic -DLINUX=2 -D_FORTIFY_SOURCE=2 -D_GNU_SOURCE -D_REENTRANT -I/usr/include/apr-1.0 -I/usr/include/openssl -I/usr/include/xmltok -pthread     -I/usr/include/apache2  -I/usr/include/apr-1.0   -I/usr/include/apr-1.0   -c -o ./store_null.lo ./store_null.c && touch ./store_null.slo
+./store_null.c: In function 'init_storage_null':
+./store_null.c:68:21: warning: assignment from incompatible pointer type [enabled by default]
+./store_null.c:69:21: warning: assignment from incompatible pointer type [enabled by default]
+./store_null.c:70:26: warning: assignment from incompatible pointer type [enabled by default]
+./store_null.c:71:27: warning: assignment from incompatible pointer type [enabled by default]
+./store_null.c:72:27: warning: assignment from incompatible pointer type [enabled by default]
+./store_null.c:73:27: warning: assignment from incompatible pointer type [enabled by default]
+/usr/share/apr-1.0/build/libtool --silent --mode=link --tag=disable-static x86_64-linux-gnu-gcc -o ./mod_tile.la -Bsymbolic-functions -z,relro  -L/usr/lib/x86_64-linux-gnu -lcurl -lcairo -rpath /usr/lib/apache2/modules -module -avoid-version    ./store_null.lo ./store_ro_composite.lo ./store_ro_http_proxy.lo ./store_rados.lo ./store_memcached.lo ./store_file_utils.lo ./store_file.lo ./store.lo ./sys_utils.lo ./mod_tile.lo
+make[2]: Leaving directory `/home/jaimelyn/projects/ohm_mod_tile'
+make[1]: Leaving directory `/home/jaimelyn/projects/ohm_mod_tile'
