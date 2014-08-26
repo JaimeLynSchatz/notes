@@ -1,0 +1,10 @@
+make  all-recursive
+make[1]: Entering directory `/home/jaimelyn/projects/ohm_mod_tile'
+Making all in iniparser3.0b
+make[2]: Entering directory `/home/jaimelyn/projects/ohm_mod_tile/iniparser3.0b'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/jaimelyn/projects/ohm_mod_tile/iniparser3.0b'
+make[2]: Entering directory `/home/jaimelyn/projects/ohm_mod_tile'
+apxs2 -c      -L/usr/lib/x86_64-linux-gnu -lcurl -Wl,-Bsymbolic-functions -Wl,-z,relro -lcairo   ./mod_tile.c  ./sys_utils.c ./store.c ./store_file.c ./store_file_utils.c ./store_memcached.c ./store_rados.c ./store_ro_http_proxy.c ./store_ro_composite.c ./store_null.c
+make[2]: Leaving directory `/home/jaimelyn/projects/ohm_mod_tile'
+make[1]: Leaving directory `/home/jaimelyn/projects/ohm_mod_tile'
