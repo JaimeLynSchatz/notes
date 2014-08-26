@@ -1,0 +1,41 @@
+jaimelyn@jaimelyn-Aspire-5742:~$ sudo apt-get install postgresql-9.1-postgis
+[sudo] password for jaimelyn: 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+postgresql-9.1-postgis is already the newest version.
+0 upgraded, 0 newly installed, 0 to remove and 16 not upgraded.
+4 not fully installed or removed.
+After this operation, 0 B of additional disk space will be used.
+Do you want to continue [Y/n]? Y
+Setting up postgresql-common (154.pgdg12.4+1) ...
+ * Starting PostgreSQL 8.4 database server                                                               [ OK ] 
+ * Starting PostgreSQL 9.1 database server                                                                       * Error: Port conflict: another instance is already running on /var/run/postgresql with port 5432
+                                                                                                         [fail]
+invoke-rc.d: initscript postgresql, action "start" failed.
+dpkg: error processing postgresql-common (--configure):
+ subprocess installed post-installation script returned error exit status 1
+dpkg: dependency problems prevent configuration of postgresql-9.3:
+ postgresql-9.3 depends on postgresql-common (>= 142~); however:
+  Package postgresql-common is not configured yet.
+dpkg: error processing postgresql-9.3 (--configure):
+ dependency problems - leaving unconfigured
+dpkg: dependency problems prevent configuration of postgresql-contrib-9.3:
+ postgresql-contrib-9.3 depends on postgresql-9.3 (= 9.3.5-1.pgdg12.4+1); however:
+  Package postgresql-9.3 is not configured yet.
+dpkg: error processing postgresql-contrib-9.3 (--configure):
+ dependency problems - leaving unconfigured
+dpkg: dependency problems prevent configuration of postgresql-contrib:
+ postgresql-contrib depends on postgresql-contrib-9.3; however:
+  Package postgresql-contrib-9.3 is not configured yet.
+dpkg: error processing postgresql-contrib (--configure):
+ dependency problems - leaving unconfNo apport report written because the error message indicates its a followup error from a previous failure.
+                               No apport report written because the error message indicates its a followup error from a previous failure.
+                         No apport report written because MaxReports is reached already
+                                                                                       igured
+Errors were encountered while processing:
+ postgresql-common
+ postgresql-9.3
+ postgresql-contrib-9.3
+ postgresql-contrib
+E: Sub-process /usr/bin/dpkg returned an error code (1)
