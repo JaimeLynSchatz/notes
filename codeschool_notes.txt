@@ -1,0 +1,34 @@
+This is from an answer from a moderator in the discussion board. Come back to it when you understand more:
+
+Instead of answering directly, I'll provide an implementation of map.**** I think that'll explain a lot:
+
+var passengers = [
+  ["Thomas", "Meeks"],
+  ["Gregg", "Pollack"],
+  ["Christine", "Wong"],
+  ["Dan", "McGaw"]
+];
+
+Array.prototype.myMap = function(functionToCallOnEachElement) {
+  var newModifiedArray = [];
+  for (var i = 0; i < this.length; i++) {
+    var result = functionToCallOnEachElement(this[i]);
+    newModifiedArray.push(result);
+  }
+  return newModifiedArray;
+};
+
+var modifiedNames = passengers.myMap(function(arrayCell) {
+  return arrayCell[0] + " " + arrayCell[1];
+});
+
+//console.dir(modifiedNames);
+To somewhat address your question, recursion isn't used. A loop suffices.** It modifies a local copy of a new array and returns it; that's how it keeps track of the new results.***
+
+If the prototype and use of this just make things too confusing, say so, and I or someone else will more directly answer your question. I'd recommend coming back to this later once you complete JSRT Part 3, though, as it'll make a lot more sense.
+
+** You could use recursion, but it'd be tail recursion, and in no way is required or recommended here.
+
+*** Technically the stack is used, specifically to store a reference to newModifiedArray and a few other things, but in this case, mainly because recursion isn't used, don't worry too much about what's happening w/ the stack ... it's a little instructive, though, so later ask if you wish and I can go into a bit more detail.
+
+**** In essence never implement your own map, or replace existing object methods with your own. This is just to illustrate how things are done, namely to illustrate it's not too complicated. Also, note the real map implementation is in fact more complex, but it's mainly for robustness (and to handle the full map interface) ... it's in essence doing the same thing as myMap. Still, way better to use the built-in map (I'm guessing it's implemented in C or C++, and hence is way faster, and in real applications, robustness is important.)
