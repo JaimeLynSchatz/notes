@@ -26,4 +26,13 @@ On to Docker and Friends
 Kubernetes - new project by Google
 OS container cluster manager
 
+Kubernetes
+==========
+There are sample apps in the package - go get them and check them out.
 
+
+g.co/cloudstarterpack
+promo code erjohnso for a $500 cloud platform credit
+https://www.gcp-live.com/
+http://bit.ly/use-gce
+kubernetes.io/
