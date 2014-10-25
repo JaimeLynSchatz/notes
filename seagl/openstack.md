@@ -25,6 +25,8 @@ Openstack has meetups.
 wiki.openstack.org
 openstack.org/community
 
+Look for the low-hanging fruit tag in Launchpad if you're interested in just getting started.
+
 crinkle on freenode
 gerrit/launchpad: krinkle
 github: cmurphy
