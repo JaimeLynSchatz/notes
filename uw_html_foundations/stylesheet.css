@@ -1,0 +1,27 @@
+html {
+	background-color: #FF99FF;  /* I'm going to be an ugly color */
+}
+
+p {
+	padding: 2em;
+}
+
+.bright {
+	color: purple;
+}
+
+img:hover {
+	opacty: 0.5;
+}
+
+header {
+	background-color: magenta;
+}
+
+header img {
+	max-width: 30%;
+}
+
+a:visited {
+	text-decoration: line-through;
+}
