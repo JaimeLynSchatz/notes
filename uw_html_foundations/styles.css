@@ -1,3 +1,17 @@
+/* Be sure to fix up your default styling here */
+
+* { margin: 0;
+    padding: 0;}
+
 html {
-	background-color: #FF99FF;  /* I'm going to be an ugly color */
+	background-color: hsla(284, 100%, 82%, 0.54);  /* I'm going to be an ugly color */
+}
+
+header img { max-width: 30%;
+			 margin: 2rem;}
+
+nav { border-top: ;}
+
+article {
+	padding-bottom: ;
 }
