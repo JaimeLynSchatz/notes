@@ -7,11 +7,20 @@ html {
 	background-color: hsla(284, 100%, 82%, 0.54);  /* I'm going to be an ugly color */
 }
 
+header li { display: inline-block;
+			padding: .5rem 1rem; 
+		    border-left: 1px solid gray; }
+
+header li:first-of-type { border: none; }
+
 header img { max-width: 30%;
 			 margin: 2rem;}
 
-nav { border-top: ;}
+nav { border-top: 3px solid hsla(206, 100%, 50%, 0.3);
+	  border-bottom: 3px solid hsla(206, 100%, 50%, 0.3);
+	  margin-bottom: 2rem;}
 
 article {
-	padding-bottom: ;
+	padding-bottom: 2 rem;
+	border-bottom: 1px solid orange;
 }
