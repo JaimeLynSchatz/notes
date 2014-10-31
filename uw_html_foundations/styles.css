@@ -22,5 +22,36 @@ nav { border-top: 3px solid hsla(206, 100%, 50%, 0.3);
 
 article {
 	padding-bottom: 2 rem;
-	border-bottom: 1px solid orange;
+	border-bottom: 2px solid hsla(69, 100%, 61%, 0.78);
+}
+
+article figure {float: left;}
+
+/* clearfix hack from http://nicolasgallagher.com/micro-clearfix-hack/ */
+
+/**
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    contenteditable attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that are clearfixed.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+    *zoom: 1;
 }
