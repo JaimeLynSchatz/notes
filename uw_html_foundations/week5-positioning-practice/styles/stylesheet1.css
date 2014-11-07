@@ -1,0 +1,34 @@
+* {margin: 0;
+   padding: 0;}
+
+.blue { background-color: blue;
+        width: 4rem;
+        height: 4rem;}
+
+.red { background-color: red;
+        width: 4rem;
+        height: 4rem;}
+
+.orange { background-color: orange;
+        width: 4rem;
+        height: 4rem;}
+
+.green { background-color: green;
+        width: 4rem;
+        height: 4rem;}
+
+.pink { background-color: pink;
+        width: 4rem;
+        height: 4rem;}
+
+.purple { background-color: purple;
+        width: 4rem;
+        height: 4rem;}
+
+.yellow { background-color: yellow;
+        width: 4rem;
+        height: 4rem;}
+
+.black { background-color: black;
+        width: 4rem;
+        height: 4rem;}
