@@ -17,14 +17,14 @@ Chloe
 1. "Elf"
 2. Easy bake oven
 3. "Finding Nemo"
-4. Mermaid Barbies
-5. Tinkerbell toys
-6. A joke book
-7. A globe
-8. A purse like Madeleine's brown hobo bag
-9. A pillowpet
-10. Stuffed animal penguin to be a friend to Molly
-11. A-Z Mysteries
+4. Tinkerbell toys
+5. Mermaid barbie
+6. A globe
+7. A-Z Mysteries
+8. A purse like Madeleine's brown bag
+9. Stuffed animal penguin
+10. A stuffed animal lizard
+
 12. Barbies with shoes and clothes
 13. A stuffed animal lizard
 
