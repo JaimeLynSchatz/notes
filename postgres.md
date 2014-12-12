@@ -64,3 +64,29 @@ edited Aug 16 '11 at 5:16 | answered Aug 16 '11 at 5:11
 I'm using dropuser command to remove also the user. –  pl1nk Sep 5 '12 at 15:26 
 
 This will restart postgres and disconnect everyone: sudo service postgresql restart Then do a: dropdb -h localhost -p 5432 -U "youruser" "testdb" Notice the "" to make sure special characters go in without a hitch. –  unmircea Jun 26 at 6:10 
+
+Making Postgres Find C
+======================
+You are probably running into this change in PostgreSQL 9.2 (quoting the release notes here):
+
+No longer forcibly lowercase procedural language names in CREATE FUNCTION (Robert Haas)
+
+While unquoted language identifiers are still lowercased, strings and quoted identifiers are no longer forcibly down-cased. Thus for example CREATE FUNCTION ... LANGUAGE 'C' will no longer work; it must be spelled 'c', or better omit the quotes.
+
+It's also reflected in the manual for CREATE FUNCTION
+
+lang_name
+
+The name of the language that the function is implemented in. Can be SQL, C, internal, or the name of a user-defined procedural language. For backward compatibility, the name can be enclosed by single quotes.
+
+Quoting the language name has been discouraged since at least version 7.3 (maybe longer), but old habbits die hard, obviously.
+
+You would need to remove the quotes around C arriving at: LANGUAGE c.
+
+Seems like Joe Conway didn't get the message and PL/R (therefore) isn't ready for PostgreSQL 9.2, judging from the project page.
+
+Feedback from Joe Conway
+
+Joe Conway left an answer that got deleted because it should be a comment. I paste it here for the general public who can't see deleted answers:
+
+I got the message, just haven't had the time to do a new PL/R release. Look for it by December, but in the meantime the manual workaround noted above is pretty simple.
