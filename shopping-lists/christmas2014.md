@@ -1,30 +1,28 @@
 Madeleine
 =========
-0. ?? no-no ??
-1. Eyeshadow (browns, golds, and/or pinks)
-2. Makeup brushes
-3. iTunes, Target and/or Claire giftcard
-4. Eyebrow stuff
-5. Nail polish
-6. "The Deathly Hollows Part 1"
-7. "Catching Fire"
-8. "Noah"
-9. Music for the cello song (yo-yo ma, bach??)
-10. Bronzer
+0. straightener
+1. iTunes, Target and/or Claires giftcard
+2. Eyeshadow (browns, golds, and/or pinks)
+3. eye, mostly Makeup brushes
+4. b w music notes socks from old mills music
+4. half blood prince movie
+5. "The Deathly Hollows Part 1"
+7. bronzer
+8. cello song sheet music Bach's unaccompanied suite 1 for cello
 
 Chloe
 =====
 1. "Elf"
 2. Easy bake oven
 3. "Finding Nemo"
-4. Mermaid Barbies
-5. Tinkerbell toys
-6. A joke book
-7. A globe
-8. A purse like Madeleine's brown hobo bag
-9. A pillowpet
-10. Stuffed animal penguin to be a friend to Molly
-11. A-Z Mysteries
+4. Tinkerbell toys
+5. Mermaid barbie
+6. A globe
+7. A-Z Mysteries
+8. A purse like Madeleine's brown bag
+9. Stuffed animal penguin
+10. A stuffed animal lizard
+
 12. Barbies with shoes and clothes
 13. A stuffed animal lizard
 
