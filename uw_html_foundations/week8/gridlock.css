@@ -1,0 +1,44 @@
+* { 
+	margin: 0;
+	padding: 0;
+}
+
+div { 
+	box-sizing: border-box;
+}
+
+div.row { 
+	width: 90%;
+	margin: auto;
+}
+
+div.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+div[class^='col'] {
+	float: left;
+	padding-right: 1rem;
+}
+
+div[class^='col']:last-child {
+	padding-right: 0;
+}
+
+div.col-1-of-3 { 
+	width: 33.33%; 
+	background-color: olivedrab;
+}
+
+div.col-1-of-2 {
+	width: 50%;
+	background-color: rgba(255,0, 255, .50);
+}
+
+div.col-2-of-3 {
+	width: 66.66%;
+	background-color: rgba(255, 0, 0, .50);
+}
+
