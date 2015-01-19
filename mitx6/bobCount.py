@@ -2,6 +2,14 @@ import re
 
 s = "thissbobobtringhasbobinit"
 
+# of use:
+# s = "yourstring"
+# s = map(lambda c: c, s)
+# s now is ['y', 'o', 'u', etc]
+#
+# to bring them back
+# ''.join(s)
+
 bob = "bob"
 bobCount = 0
 
