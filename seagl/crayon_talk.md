@@ -27,3 +27,5 @@ SEaton
 (extending the language with the language -- like the Youtube guy talking about defining words before you use them)
 
 
+Is this the next step after Scratch and Minecraft programming? this appears to be better than things like Processing and whatever the heck they taught the girls at DigiGirlz.
+And if it translates to Python ... that means arduino. Can you push that?? Or is Python just easier? Is Crayon actually easier?
