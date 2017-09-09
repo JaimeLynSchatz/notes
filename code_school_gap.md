@@ -120,3 +120,4 @@ So you can make sure your styles line up so you don't get stuck in a cadence tha
 *Read about it
 *Plan a party using these methods
 
+The more stuff you can make, the better.
