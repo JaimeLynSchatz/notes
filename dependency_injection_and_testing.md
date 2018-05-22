@@ -34,3 +34,31 @@ Angular === constructor based injection
 Fail fast, throw an exception, all of that when there's an unfullfilled dependency.
 
 Your component has a particular set of dependencies
+
+Advantages of Depencency Injection
+Isolation
+Testability
+Sep of Concerns
+Maintainability
+etc.
+
+Lots of Anti-Patterns
+Statics
+Ambient injectors
+"smart" factories, "letting go"
+Internal Fallbacks/defaults
+Ambient context -- this is like my tests that were passing or erroring out when json.request was failing
+Questionable practices
+*Private property injection -- requires checking if properties were set over and over again
+*Optional dependencies
+
+Testing -- test:
+-pass a null
+-pass an empty string
+-pass an undefined
+-pass a string with a spac
+e
+
+###What should you test?
+Only the code you want to work properly.
+The publiclly accessible methods
