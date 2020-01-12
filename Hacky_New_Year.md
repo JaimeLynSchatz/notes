@@ -5,7 +5,7 @@ Democracy Lab meets at code fellows
 Open Seattle
 Code for America 4th Thursday each month by century Link field
 
-Seattle tech4good
+Seattle tech4good - check them out (again?)
 
 Aiga professional association for desig
 
@@ -20,6 +20,7 @@ Website development interface
 ###Dauntlez (Edina)
 Self defense training
 They need a website
+[http://www.dauntlez.com/](http://www.dauntlez.com/)
 
 ###Apollo for Banana App
 Peer to peer food donation
@@ -28,6 +29,8 @@ Peer to peer food donation
 Lawyers vacating convictions
 Seeking to operationalize it
 Metrics and infrastructure
+Docker FTW!
+[https://github.com/openseattle/convictionvacation](https://github.com/openseattle/convictionvacation)
 
 ###123 4 Earth
 Crystalize idea, environment some
@@ -56,7 +59,8 @@ Devs
 ###ClimateTree
 Research
 Mine articles on Wikipedia to find solutions
-Webscrapersa
+Webscrapers
+[https://lucene.apache.org/solr/](https://lucene.apache.org/solr/)
 
 ###Pinion
 Star-based voting on anything
